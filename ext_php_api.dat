@@ -22,7 +22,7 @@ Initialization of the class
 ";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:479:"		global $BACK_PATH;
 		parent::init();
 		$this->strExtKey = 'tx_pbsurvey';
-		$this->arrModParameters = t3lib_div::_GP($this->strExtKey);
+		$this->arrModParameters = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP($this->strExtKey);
 		$this->strResultsTable = $this->strExtKey . '_results';
 		$this->strItemsTable = $this->strExtKey . '_item';
 		$this->strAnswersTable = $this->strExtKey . '_answers';
@@ -40,10 +40,10 @@ Initialization of the class
 
 Main function of the module. Write the content to $this->content
 ";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:507:"		global $BE_USER,$LANG,$BACK_PATH;
-		$arrPageInfo = t3lib_BEfunc::readPageAccess($this->id,$this->perms_clause);
+		$arrPageInfo = \TYPO3\CMS\Backend\Utility\BackendUtility::readPageAccess($this->id,$this->perms_clause);
 		$intAccess = is_array($arrPageInfo) ? 1 : 0;
 		if (($this->id && $intAccess) || ($BE_USER->user["admin"] && !$this->id))	{
-			$this->objDoc = t3lib_div::makeInstance("mediumDoc");
+			$this->objDoc = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance("mediumDoc");
 			$this->objDoc->backPath = $BACK_PATH;
 			$this->objDoc->form='<form action="
 [...]
@@ -105,8 +105,8 @@ Count the results on this page
 ";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:42:"Numbers of finished and unfinished results";}}s:7:"content";a:2:{i:0;s:507:"		$arrSelectConf['selectFields'] = '*';
 		$arrSelectConf['where'] = '1=1';
     	$arrSelectConf['where'] .= ' AND pid=' . intval($this->id);
-		$arrSelectConf['where'] .= t3lib_BEfunc::BEenableFields($this->strResultsTable);
-		$arrSelectConf['where'] .= t3lib_BEfunc::deleteClause($this->strResultsTable);
+		$arrSelectConf['where'] .= \TYPO3\CMS\Backend\Utility\BackendUtility::BEenableFields($this->strResultsTable);
+		$arrSelectConf['where'] .= \TYPO3\CMS\Backend\Utility\BackendUtility::deleteClause($this->strResultsTable);
 		$dbRes=$GLOBALS['TYPO3_DB']->exec_SELECTquery($arrSelectConf['selectF
 [...]
 ($SOBE->include_once as $INC_FILE)	include_once($INC_FILE);
@@ -132,8 +132,8 @@ Initialization of the class
 ";s:5:"param";a:2:{i:0;a:2:{i:0;s:6:"object";i:1;s:13:"Parent Object";}i:1;a:2:{i:0;s:5:"array";i:1;s:37:"Configuration array for the extension";}}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:370:"		global $BACK_PATH;
 		parent::init($pObj,$conf);
 		$this->handleExternalFunctionValue();
-		$this->arrPageInfo = t3lib_BEfunc::readPageAccess($this->pObj->id,$this->perms_clause);
-		list($strRequestUri) = explode('#',t3lib_div::getIndpEnv('REQUEST_URI'));
+		$this->arrPageInfo = \TYPO3\CMS\Backend\Utility\BackendUtility::readPageAccess($this->pObj->id,$this->perms_clause);
+		list($strRequestUri) = explode('#',\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('REQUEST_URI'));
 	}
 
     /**********************************
@@ -283,7 +283,7 @@ checks access levels and outputs the survey
 Declare username according to login or anonymous
 ";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:531:"    	$this->arrSessionData = $GLOBALS['TSFE']->fe_user->getKey('ses','surveyData');
     	$this->arrSessionData['uid'] = $GLOBALS['TSFE']->loginUser?$GLOBALS['TSFE']->fe_user->user['uid']:0;
-    	$this->arrSessionData['uip'] = t3lib_div::getIndpEnv('REMOTE_ADDR');
+    	$this->arrSessionData['uip'] = \TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('REMOTE_ADDR');
     	if (isset($_COOKIE[$this->extKey])&& $this->arrConfig['anonymous_mode'] && !$GLOBALS['TSFE']->fe_user->user['uid']) {
     		foreach ($_COOKIE[$this->extKey] as $strName => $mixValue) {
       			$this->arrSessionData[$strName] = $mixValue;
@@ -421,7 +421,7 @@ when survey is finished
     ";i:1;i:1;}s:12:"content_size";i:675;s:13:"content_lines";i:16;s:6:"atLine";i:404;}i:27;a:7:{s:6:"header";s:32:"function callHeader($strInput) {";s:11:"parentClass";s:15:"tx_pbsurvey_pi1";s:4:"cDat";a:3:{s:4:"text";s:45:"
 
 Set page header when jumping to other page
-";s:5:"param";a:1:{i:0;a:2:{i:0;s:6:"string";i:1;s:50:"String according to configuration to set page link";}}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:122:"        header('Location: '.t3lib_div::locationHeaderUrl($this->pi_getPageLink($this->arrConfig[$strInput])));
+";s:5:"param";a:1:{i:0;a:2:{i:0;s:6:"string";i:1;s:50:"String according to configuration to set page link";}}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:122:"        header('Location: '.\TYPO3\CMS\Core\Utility\GeneralUtility::locationHeaderUrl($this->pi_getPageLink($this->arrConfig[$strInput])));
     }
 
     ";i:1;i:0;}s:12:"content_size";i:122;s:13:"content_lines";i:3;s:6:"atLine";i:427;}i:29;a:7:{s:6:"header";s:55:"function array_htmlspecialchars(&$mixInput, &$intKey) {";s:11:"parentClass";s:15:"tx_pbsurvey_pi1";s:4:"cDat";a:3:{s:4:"text";s:138:"
@@ -484,9 +484,9 @@ If Anonymous user then check on IP-address
 	";i:1;i:1;}s:12:"content_size";i:1108;s:13:"content_lines";i:23;s:6:"atLine";i:486;}i:37;a:7:{s:6:"header";s:25:"function checkCaptcha() {";s:11:"parentClass";s:15:"tx_pbsurvey_pi1";s:4:"cDat";a:3:{s:4:"text";s:72:"
 
 Check if freeCap CAPTCHA (sr_freecap) is loaded and make object of it
-";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"object";i:1;s:20:"Object of sr_freecap";}}s:7:"content";a:2:{i:0;s:222:"		if (t3lib_extMgm::isLoaded('sr_freecap') ) {
-			require_once(t3lib_extMgm::extPath('sr_freecap').'pi2/class.tx_srfreecap_pi2.php');
-			$objOut = t3lib_div::makeInstance('tx_srfreecap_pi2');
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"object";i:1;s:20:"Object of sr_freecap";}}s:7:"content";a:2:{i:0;s:222:"		if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('sr_freecap') ) {
+			require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('sr_freecap').'pi2/class.tx_srfreecap_pi2.php');
+			$objOut = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tx_srfreecap_pi2');
 		}
 		return $objOut;
 	}
@@ -1161,10 +1161,10 @@ and give points to answers for further use in statistical software.
 Initialization of the class
 ";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:507:"		global $BACK_PATH;
 		$this->strExtKey = 'tx_pbsurvey';
-		$this->arrWizardParameters = t3lib_div::_GP('P');
-		$this->arrTableParameters = t3lib_div::_GP($this->strExtKey);
+		$this->arrWizardParameters = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('P');
+		$this->arrTableParameters = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP($this->strExtKey);
 		$this->blnXmlStorage = $this->arrWizardParameters['params']['xmlOutput'];
-		$this->objDoc = t3lib_div::makeInstance('mediumDoc');
+		$this->objDoc = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('mediumDoc');
 		$this->objDoc->docType = 'xhtml_trans';
 		$this->objDoc->backPath = 
 [...]
@@ -1223,7 +1223,7 @@ Fill the table with values and check if save button has been pressed
 			$arrOutput = $this->arrTableParameters['answer'];
 		} else {	// No data submitted
 			if ($this->blnXmlStorage)	{
-				$arrOutput = t3lib_div::xml2array($arrRow[$this->arrWizardParameters['field']]);
+				$arrOutput = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($arrRow[$this->arrWizardParameters['field']]);
 			} else {
 				$arrOutput = $this->answersArray($arrRow[$this->arrWizardParameters['field']]);
 			}
@@ -1235,7 +1235,7 @@ Fill the table with values and check if save button has been pressed
 	";i:1;i:0;}s:12:"content_size";i:559;s:13:"content_lines";i:16;s:6:"atLine";i:139;}i:13;a:7:{s:6:"header";s:26:"function answersWizard()	{";s:11:"parentClass";s:23:"tx_pbsurvey_answers_wiz";s:4:"cDat";a:3:{s:4:"text";s:95:"
 
 Get the contents of the current record, do the localisation and make a HTML table out of it.
-";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:26:"HTML content for the form.";}}s:7:"content";a:2:{i:0;s:427:"        $arrRecord=t3lib_BEfunc::getRecord($this->arrWizardParameters['table'],$this->arrWizardParameters['uid']);
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:26:"HTML content for the form.";}}s:7:"content";a:2:{i:0;s:427:"        $arrRecord=\TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($this->arrWizardParameters['table'],$this->arrWizardParameters['uid']);
         if (!in_array(intval($arrRecord['sys_language_uid']),array(-1,0))) {
         	$this->blnLocalization = TRUE;
         	 $this->l18n_diffsource($arrRecord['l18n_diffsource']);
@@ -1283,9 +1283,9 @@ Output the accumulated content to screen
 	";i:1;i:0;}s:12:"content_size";i:141;s:13:"content_lines";i:9;s:6:"atLine";i:208;}i:21;a:8:{s:6:"header";s:27:"function checkReference() {";s:11:"parentClass";s:23:"tx_pbsurvey_answers_wiz";s:11:"sectionText";a:1:{i:0;s:18:"Checking functions";}s:4:"cDat";a:3:{s:4:"text";s:46:"
 
 Check if there is a reference to the record
-";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:238:"		$arrRecord=t3lib_BEfunc::getRecord($this->arrWizardParameters['table'],$this->arrWizardParameters['uid']);
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:238:"		$arrRecord=\TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($this->arrWizardParameters['table'],$this->arrWizardParameters['uid']);
 		if (!is_array($arrRecord))	{
-			t3lib_BEfunc::typo3PrintError('Wizard Error','No reference to record',0);
+			\TYPO3\CMS\Backend\Utility\BackendUtility::typo3PrintError('Wizard Error','No reference to record',0);
 			exit;
 		}
     }
@@ -1318,11 +1318,11 @@ and accordingly it will manipulate the internal arrTableParameters array
 Detects if a save button has been pressed
 and accordingly save the data and redirect to record page
 ";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:507:"        if ($this->arrTableParameters['savedok'] || $this->arrTableParameters['saveandclosedok'])	{
-            $tce = t3lib_div::makeInstance('t3lib_TCEmain');
+            $tce = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('t3lib_TCEmain');
             $tce->stripslashes_values=0;
             $arrData[$this->arrWizardParameters['table']][$this->arrWizardParameters['uid']][$this->arrWizardParameters['field']] = $this->answersString($this->arrTableParam
 [...]
-ocation: '.t3lib_div::locationHeaderUrl($this->arrWizardParameters['returnUrl']));
+ocation: '.\TYPO3\CMS\Core\Utility\GeneralUtility::locationHeaderUrl($this->arrWizardParameters['returnUrl']));
 				exit;
             }
         }
@@ -1423,7 +1423,7 @@ Draw the footer of the wizard table
 Draw the Control Panel in front of every row
 ";s:5:"param";a:2:{i:0;a:2:{i:0;s:7:"integer";i:1;s:12:"Current line";}i:1;a:2:{i:0;s:7:"integer";i:1;s:24:"Amount of available rows";}}s:6:"return";a:2:{i:0;s:5:"array";i:1;s:20:"Containing the panel";}}s:7:"content";a:2:{i:0;s:507:"        global $LANG;
 			if ($intLine!=0)	{
-				$arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_up]['.(($intLine+1)*2).']"'.t3lib_iconWorks::skinImg($this->objDoc->backPath,'gfx/pil2up.gif','').t3lib_BEfunc::titleAltAttrib($LANG->getLL('table_up',1)).' />';
+				$arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_up]['.(($intLine+1)*2).']"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/pil2up.gif','').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->getLL('table_up',1)).' />';
 			} else {
 				$arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_bottom]['.(($in
 [...]
@@ -1461,9 +1461,9 @@ This wizard will help the user to add conditions to pagebreaks
 Initialization of the class
 ";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:507:"		global $BACK_PATH;
 		$this->strExtKey = 'tx_pbsurvey';
-		$this->arrWizardParameters = t3lib_div::_GP('P');
-		$this->arrTableParameters = t3lib_div::_GP($this->strExtKey);
-		$this->objDoc = t3lib_div::makeInstance('mediumDoc');
+		$this->arrWizardParameters = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('P');
+		$this->arrTableParameters = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP($this->strExtKey);
+		$this->objDoc = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('mediumDoc');
 		$this->objDoc->backPath = $BACK_PATH;
 		$this->objDoc->JScode=$this->objDoc->wrapScriptTags('
 			function jumpToUrl(URL,formEl)	{	//
@@ -1498,7 +1498,7 @@ ore.php:rm.closeDoc')).'" /></a>
 	";i:1;i:1;}s:12:"content_size";i:1056;s:13:"content_lines";i:16;s:6:"atLine";i:91;}i:7;a:7:{s:6:"header";s:29:"function conditionsWizard()	{";s:11:"parentClass";s:26:"tx_pbsurvey_conditions_wiz";s:4:"cDat";a:3:{s:4:"text";s:74:"
 
 Get the contents of the current record and make a HTML table out of it.
-";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:26:"HTML content for the form.";}}s:7:"content";a:2:{i:0;s:233:"        $arrRecord=t3lib_BEfunc::getRecord($this->arrWizardParameters['table'],$this->arrWizardParameters['uid']);
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:6:"string";i:1;s:26:"HTML content for the form.";}}s:7:"content";a:2:{i:0;s:233:"        $arrRecord=\TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($this->arrWizardParameters['table'],$this->arrWizardParameters['uid']);
 		$arrTable = $this->getTableCode($arrRecord);
 		$strOutput = $this->wizardHTML($arrTable);
 		return $strOutput;
@@ -1552,9 +1552,9 @@ Outputting the accumulated content to screen
     ";i:1;i:0;}s:12:"content_size";i:141;s:13:"content_lines";i:9;s:6:"atLine";i:170;}i:17;a:8:{s:6:"header";s:27:"function checkReference() {";s:11:"parentClass";s:26:"tx_pbsurvey_conditions_wiz";s:11:"sectionText";a:1:{i:0;s:18:"Checking functions";}s:4:"cDat";a:3:{s:4:"text";s:46:"
 
 Check if there is a reference to the record
-";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:238:"		$arrRecord=t3lib_BEfunc::getRecord($this->arrWizardParameters['table'],$this->arrWizardParameters['uid']);
+";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:238:"		$arrRecord=\TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($this->arrWizardParameters['table'],$this->arrWizardParameters['uid']);
 		if (!is_array($arrRecord))	{
-			t3lib_BEfunc::typo3PrintError('Wizard Error','No reference to record',0);
+			\TYPO3\CMS\Backend\Utility\BackendUtility::typo3PrintError('Wizard Error','No reference to record',0);
 			exit;
 		}
     }
@@ -1583,7 +1583,7 @@ ey]['rule'][count($this->arrTableParameters['grps'][$intKey]['rule'])-1]);
 Detects if a save button (up/down/around/delete) has been pressed
 and accordingly save the data and redirect to record page
 ";s:5:"param";a:0:{}s:6:"return";a:2:{i:0;s:4:"void";i:1;s:0:"";}}s:7:"content";a:2:{i:0;s:507:"        if ($this->arrTableParameters['savedok'] || $this->arrTableParameters['saveandclosedok']) {
-            $tce = t3lib_div::makeInstance('t3lib_TCEmain');
+            $tce = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('t3lib_TCEmain');
             $tce->stripslashes_values=0;
             if (count($this->arrTableParameters['grps'])) {
 	            $arrSave['grps'] = $this->arrTableParameters['grps'];
@@ -1664,7 +1664,7 @@ Creates the HTML for a single group control button
             'row_turnup'   => array('gfx/turn_up.gif','table_up'),
             'row_down'     => array('gfx/pi
 [...]
-me][0]).t3lib_BEfunc::titleAltAttrib($LANG->getLL($arrOptions[$strName][1])).' /><br />';
+me][0]).\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->getLL($arrOptions[$strName][1])).' /><br />';
         return $strOutput;
     }
 
@@ -1730,7 +1730,7 @@ Draw the footer of the wizard
         $strOutput = '
 			</table>
 			<div id="c-saveButtonPanel">
-                <input type="image" class="c-inputButton" name="'.$this->strExtKey.'[savedok]"'.t3lib_iconWorks::skinImg($this->objDoc->backPath,'gfx/savedok.gif').t3lib_BEfunc::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.saveDoc')).'" />
+                <input type="image" class="c-inputButton" name="'.$this->strExtKey.'[savedok]"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/savedok.gif').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.saveDoc')).'" />
                 <input type="i
 [...]
 rOutput;
@@ -1751,7 +1751,7 @@ Write content to $this->arrPrevQuestions[]
 Creates language-overlay for records (where translation is found in records from the same table)
 Inserted this function because couldn't find an alternative for the backend, only frontend
 ";s:5:"param";a:3:{i:0;a:2:{i:0;s:6:"string";i:1;s:10:"Table name";}i:1;a:2:{i:0;s:5:"array";i:1;s:85:"Record to overlay. Must contain uid, pid and $TCA[$strTable]['ctrl']['languageField']";}i:2;a:2:{i:0;s:7:"integer";i:1;s:66:"Pointer to the sys_language uid for content of the current record.";}}s:6:"return";a:2:{i:0;s:5:"mixed";i:1;s:63:"Returns the input record, possibly overlaid with a translation.";}}s:7:"content";a:2:{i:0;s:507:"		global $TCA;
-		t3lib_div::loadTCA($strTable); // Load column information in TCA
+		\TYPO3\CMS\Core\Utility\GeneralUtility::loadTCA($strTable); // Load column information in TCA
 		if ($arrRow['uid']>0 && $arrRow['pid']>0)	{
 			if ($TCA[$strTable] && $TCA[$strTable]['ctrl']['languageField'] && $TCA[$strTable]['ctrl']['transOrigPointerField'])	{
 				if ($intSysLanguageContent>0)	{

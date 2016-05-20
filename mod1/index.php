@@ -84,7 +84,7 @@ class tx_pbsurvey_module1 extends \TYPO3\CMS\Backend\Module\BaseScriptClass {
 		$arrPageInfo = BackendUtility::readPageAccess($this->id,$this->perms_clause);
 		$intAccess = is_array($arrPageInfo) ? 1 : 0;
 		if (($this->id && $intAccess) || ($BE_USER->user["admin"] && !$this->id))	{
-			$this->objDoc = GeneralUtility::makeInstance("TYPO3\\CMS\\Backend\\Template\\MediumDocumentTemplate");
+			$this->objDoc = GeneralUtility::makeInstance("TYPO3\\CMS\\Backend\\Template\\DocumentTemplate");
 			$this->objDoc->backPath = $BACK_PATH;
 			$this->objDoc->form='<form action="" method="POST">';
 			$this->objDoc->JScode = $this->objDoc->wrapScriptTags('

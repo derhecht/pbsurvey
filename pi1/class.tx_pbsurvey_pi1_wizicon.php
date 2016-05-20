@@ -27,16 +27,15 @@
  * @author    Patrick Broens <patrick@patrickbroens.nl>
  */
 
-$LANG->includeLLFile('EXT:pbsurvey/lang/locallang.xml');
+$GLOBALS['LANG']->includeLLFile('EXT:pbsurvey/lang/locallang.xml');
 
 class tx_pbsurvey_pi1_wizicon {
 	function proc($wizardItems)	{
-		global $LANG;
 
 		$wizardItems["plugins_tx_pbsurvey_pi1"] = array(
 			"icon"=>\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath("pbsurvey")."icons/survey_wiz.gif",
-			"title"=>$LANG->getLL("pi1_title_pbsurvey"),
-			"description"=>$LANG->getLL("pi1_plus_wiz_description_pbsurvey"),
+			"title"=>$GLOBALS['LANG']->getLL("pi1_title_pbsurvey"),
+			"description"=>$GLOBALS['LANG']->getLL("pi1_plus_wiz_description_pbsurvey"),
 			"params"=>"&defVals[tt_content][CType]=list&defVals[tt_content][list_type]=pbsurvey_pi1"
 		);
 

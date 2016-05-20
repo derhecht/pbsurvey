@@ -49,7 +49,7 @@
  * For a detailed description of this script, the scope of constants and variables in it,
  * please refer to the document "Inside TYPO3"
  *
- * $Id$
+ * $Id: init.php 50710 2011-08-07 17:56:25Z ohader $
  * Revised for TYPO3 3.6 2/2003 by Kasper Skaarhoj
  *
  * @author	Kasper Skaarhoj <kasperYYYY@typo3.com>
@@ -139,10 +139,10 @@ require(PATH_t3lib.'config_default.php');
 if (!defined ('TYPO3_db')) 	die ('The configuration file was not included.');
 
 require_once(PATH_t3lib.'class.t3lib_db.php');		// The database library
-$TYPO3_DB = t3lib_div::makeInstance('t3lib_DB');
+$TYPO3_DB = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('t3lib_DB');
 
-$CLIENT = t3lib_div::clientInfo();					// $CLIENT includes information about the browser/user-agent
-$PARSETIME_START = t3lib_div::milliseconds();		// Is set to the system time in milliseconds. This could be used to output script parsetime in the end of the script
+$CLIENT = \TYPO3\CMS\Core\Utility\GeneralUtility::clientInfo();					// $CLIENT includes information about the browser/user-agent
+$PARSETIME_START = \TYPO3\CMS\Core\Utility\GeneralUtility::milliseconds();		// Is set to the system time in milliseconds. This could be used to output script parsetime in the end of the script
 
 
 // *********************
@@ -168,7 +168,7 @@ if ($TYPO3_CONF_VARS['BE']['adminOnly'] < 0)	{
 // Check IP
 // **********************
 if (trim($TYPO3_CONF_VARS['BE']['IPmaskList']))	{
-	if (!t3lib_div::cmpIP(t3lib_div::getIndpEnv('REMOTE_ADDR'), $TYPO3_CONF_VARS['BE']['IPmaskList']))	{
+	if (!\TYPO3\CMS\Core\Utility\GeneralUtility::cmpIP(\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('REMOTE_ADDR'), $TYPO3_CONF_VARS['BE']['IPmaskList']))	{
 		header('Status: 404 Not Found');	// Send Not Found header - if the webserver can make use of it...
 		header('Location: http://');	// Just point us away from here...
 		exit;	// ... and exit good!
@@ -180,9 +180,9 @@ if (trim($TYPO3_CONF_VARS['BE']['IPmaskList']))	{
 // Check SSL (https)
 // **********************
 if (intval($TYPO3_CONF_VARS['BE']['lockSSL']))	{
-	if (!t3lib_div::getIndpEnv('TYPO3_SSL'))	{
+	if (!\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_SSL'))	{
 		if ($TYPO3_CONF_VARS['BE']['lockSSL']==2)	{
-			list(,$url) = explode('://',t3lib_div::getIndpEnv('TYPO3_SITE_URL').TYPO3_mainDir,2);
+			list(,$url) = explode('://',\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('TYPO3_SITE_URL').TYPO3_mainDir,2);
 			header('Location: https://'.$url);	// Just point us away from here...
 		} else {
 			header('Status: 404 Not Found');	// Send Not Found header - if the webserver can make use of it...
@@ -196,11 +196,11 @@ if (intval($TYPO3_CONF_VARS['BE']['lockSSL']))	{
 // *******************************
 // Checking environment
 // *******************************
-if (t3lib_div::int_from_ver(phpversion())<4001000)	die ('TYPO3 runs with PHP4.1.0+ only');
+if (\TYPO3\CMS\Core\Utility\GeneralUtility::int_from_ver(phpversion())<4001000)	die ('TYPO3 runs with PHP4.1.0+ only');
 if (isset($_POST['GLOBALS']) || isset($_GET['GLOBALS']))	die('You cannot set the GLOBALS-array from outside the script.');
 if (!get_magic_quotes_gpc())	{
-	t3lib_div::addSlashesOnArray($_GET);
-	t3lib_div::addSlashesOnArray($_POST);
+	\TYPO3\CMS\Core\Utility\GeneralUtility::addSlashesOnArray($_GET);
+	\TYPO3\CMS\Core\Utility\GeneralUtility::addSlashesOnArray($_POST);
 	$HTTP_GET_VARS = $_GET;
 	$HTTP_POST_VARS = $_POST;
 }
@@ -210,10 +210,10 @@ if (!get_magic_quotes_gpc())	{
 // Check if the install script should be run:
 // ********************************************
 if (defined('TYPO3_enterInstallScript') && TYPO3_enterInstallScript)	{
-	if (!t3lib_extMgm::isLoaded('install'))	die('Install Tool is not loaded as an extension.<br/>You must add the key "install" to the list of installed extensions in typo3temp/localconf.php, $TYPO3_CONF_VARS["EXT"]["extList"].');
+	if (!\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('install'))	die('Install Tool is not loaded as an extension.<br/>You must add the key "install" to the list of installed extensions in typo3temp/localconf.php, $TYPO3_CONF_VARS["EXT"]["extList"].');
 
-	require_once(t3lib_extMgm::extPath('install').'mod/class.tx_install.php');
-	$install_check = t3lib_div::makeInstance('tx_install');
+	require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('install').'mod/class.tx_install.php');
+	$install_check = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tx_install');
 	$install_check->allowUpdateLocalConf = 1;
 	$install_check->init();
 	exit;
@@ -225,14 +225,14 @@ if (defined('TYPO3_enterInstallScript') && TYPO3_enterInstallScript)	{
 // *************************
 if ($GLOBALS['TYPO3_DB']->sql_pconnect(TYPO3_db_host, TYPO3_db_username, TYPO3_db_password))	{
 	if (!TYPO3_db)	{
-		t3lib_BEfunc::typo3PrintError ('No database selected','Database Error');
+		\TYPO3\CMS\Backend\Utility\BackendUtility::typo3PrintError ('No database selected','Database Error');
 		exit;
 	} elseif (!$GLOBALS['TYPO3_DB']->sql_select_db(TYPO3_db))	{
-		t3lib_BEfunc::typo3PrintError ('Cannot connect to the current database, "'.TYPO3_db.'"','Database Error');
+		\TYPO3\CMS\Backend\Utility\BackendUtility::typo3PrintError ('Cannot connect to the current database, "'.TYPO3_db.'"','Database Error');
 		exit;
 	}
 } else {
-	t3lib_BEfunc::typo3PrintError ('The current username, password or host was not accepted when the connection to the database was attempted to be established!','Database Error');
+	\TYPO3\CMS\Backend\Utility\BackendUtility::typo3PrintError ('The current username, password or host was not accepted when the connection to the database was attempted to be established!','Database Error');
 	exit;
 }
 
@@ -241,7 +241,7 @@ if ($GLOBALS['TYPO3_DB']->sql_pconnect(TYPO3_db_host, TYPO3_db_username, TYPO3_d
 // Checks for proper browser
 // *******************************
 if (!$CLIENT['BROWSER'] && !(defined('TYPO3_cliMode') && TYPO3_cliMode))	{
-	t3lib_BEfunc::typo3PrintError ('Browser error','You must use 4+ browsers with TYPO3!',0);
+	\TYPO3\CMS\Backend\Utility\BackendUtility::typo3PrintError ('Browser error','You must use 4+ browsers with TYPO3!',0);
 	exit;
 }
 
@@ -268,7 +268,7 @@ if (TYPO3_extTableDef_script)	{
 	NOTICE:
 	if constant TYPO3_PROCEED_IF_NO_USER is defined true (in the mainscript), this script will return even though a user did not log in!
 */
-$BE_USER = t3lib_div::makeInstance('t3lib_beUserAuth');	// New backend user object
+$BE_USER = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('t3lib_beUserAuth');	// New backend user object
 $BE_USER->warningEmail = $TYPO3_CONF_VARS['BE']['warning_email_addr'];
 $BE_USER->lockIP = $TYPO3_CONF_VARS['BE']['lockIP'];
 $BE_USER->auth_timeout_field = intval($TYPO3_CONF_VARS['BE']['sessionTimeout']);
