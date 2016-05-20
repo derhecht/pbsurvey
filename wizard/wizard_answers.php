@@ -65,7 +65,7 @@ class tx_pbsurvey_answers_wiz {
 		$this->arrWizardParameters = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('P');
 		$this->arrTableParameters = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP($this->strExtKey);
 		$this->blnXmlStorage = $this->arrWizardParameters['params']['xmlOutput'];
-		$this->objDoc = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate'); ////@FIXED by M. Fraust for TYPO3 7.6, replaced mediumDoc by TYPO3\CMS\Backend\Template\DocumentTemplate
+		$this->objDoc = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate');
 		$this->objDoc->docType = 'xhtml_trans';
 		$this->objDoc->backPath = $BACK_PATH;
 		$this->objDoc->JScode = $this->objDoc->wrapScriptTags('

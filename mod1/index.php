@@ -117,7 +117,7 @@ class tx_pbsurvey_module1 extends \TYPO3\CMS\Backend\Module\BaseScriptClass {
 			}
 			$this->content.=$this->objDoc->spacer(10);
 		} else {
-			$this->objDoc = GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate'); ////@FIXED by M. Fraust for TYPO3 7.6, replaced mediumDoc by TYPO3\CMS\Backend\Template\DocumentTemplate
+			$this->objDoc = GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate');
 			$this->objDoc->backPath = $BACK_PATH;
 			$this->content.=$this->objDoc->startPage($LANG->getLL("title"));
 			$this->content.=$this->objDoc->header($LANG->getLL("title"));

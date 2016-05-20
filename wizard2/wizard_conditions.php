@@ -64,7 +64,7 @@ class tx_pbsurvey_conditions_wiz {
 		$this->strExtKey = 'tx_pbsurvey';
 		$this->arrWizardParameters = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('P');
 		$this->arrTableParameters = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP($this->strExtKey);
-		$this->objDoc = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate'); ////@FIXED by M. Fraust for TYPO3 7.6, replaced mediumDoc by TYPO3\CMS\Backend\Template\DocumentTemplate
+		$this->objDoc = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate');
 		$this->objDoc->backPath = $BACK_PATH;
 		$this->objDoc->JScode=$this->objDoc->wrapScriptTags('
 			function jumpToUrl(URL,formEl)	{	//
