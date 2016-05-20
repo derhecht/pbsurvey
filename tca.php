@@ -322,7 +322,9 @@ $TCA['tx_pbsurvey_item'] = array (
 	                	),
                         'notNewRecords' => 1,
                         'icon' => t3lib_extMgm::extRelPath('pbsurvey').'icons/icon_wizard.gif',
-                        'script' => t3lib_extMgm::extRelPath('pbsurvey').'wizard/wizard_answers.php',
+	                    'module' => array(
+	                        'name' => 'wizard_pbsurvey_answers'
+	                    )
                     ),
                 ),
             )
@@ -705,7 +707,9 @@ $TCA['tx_pbsurvey_item'] = array (
 	                	),
                         'notNewRecords' => 1,
                         'icon' => t3lib_extMgm::extRelPath('pbsurvey').'icons/icon_wizard.gif',
-                        'script' => t3lib_extMgm::extRelPath('pbsurvey').'wizard2/wizard_conditions.php',
+	                    'module' => array(
+	                        'name' => 'wizard_pbsurvey_conditions'
+	                    )
                     ),
                 ),
             )

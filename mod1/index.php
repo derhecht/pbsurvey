@@ -22,13 +22,15 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-unset($MCONF);
-require ("conf.php");
-require ($BACK_PATH."init.php");
-require ($BACK_PATH."template.php");
-$LANG->includeLLFile('EXT:pbsurvey/lang/locallang_mod1.xml');
-require_once (PATH_t3lib.'class.t3lib_scbase.php');
-$BE_USER->modAccess($MCONF,1);
+if (!isset($MCONF)) {
+	require('conf.php');
+}
+
+$GLOBALS['LANG']->includeLLFile('EXT:pbsurvey/lang/locallang_mod1.xml');
+$GLOBALS['BE_USER']->modAccess($MCONF,1);
+
+use \TYPO3\CMS\Backend\Utility\BackendUtility;
+use \TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Backend Module 'pbsurvey' extension.
@@ -38,7 +40,7 @@ $BE_USER->modAccess($MCONF,1);
  * @package TYPO3
  * @subpackage pbsurvey
  */
-class tx_pbsurvey_module1 extends t3lib_SCbase {
+class tx_pbsurvey_module1 extends \TYPO3\CMS\Backend\Module\BaseScriptClass {
 	var $strExtKey;
 	var $strItemsTable;
 	var $arrSurveyItems = array();
@@ -58,7 +60,7 @@ class tx_pbsurvey_module1 extends t3lib_SCbase {
 		global $BACK_PATH;
 		parent::init();
 		$this->strExtKey = 'tx_pbsurvey';
-		$this->arrModParameters = t3lib_div::_GP($this->strExtKey);
+		$this->arrModParameters = GeneralUtility::_GP($this->strExtKey);
 		$this->strResultsTable = $this->strExtKey . '_results';
 		$this->strItemsTable = $this->strExtKey . '_item';
 		$this->strAnswersTable = $this->strExtKey . '_answers';
@@ -79,10 +81,10 @@ class tx_pbsurvey_module1 extends t3lib_SCbase {
 	 */
 	function main()	{
 		global $BE_USER,$LANG,$BACK_PATH;
-		$arrPageInfo = t3lib_BEfunc::readPageAccess($this->id,$this->perms_clause);
+		$arrPageInfo = BackendUtility::readPageAccess($this->id,$this->perms_clause);
 		$intAccess = is_array($arrPageInfo) ? 1 : 0;
 		if (($this->id && $intAccess) || ($BE_USER->user["admin"] && !$this->id))	{
-			$this->objDoc = t3lib_div::makeInstance("mediumDoc");
+			$this->objDoc = GeneralUtility::makeInstance("TYPO3\\CMS\\Backend\\Template\\MediumDocumentTemplate");
 			$this->objDoc->backPath = $BACK_PATH;
 			$this->objDoc->form='<form action="" method="POST">';
 			$this->objDoc->JScode = $this->objDoc->wrapScriptTags('
@@ -99,11 +101,11 @@ class tx_pbsurvey_module1 extends t3lib_SCbase {
 				'pages',
 				$arrPageInfo,
 				$arrPageInfo['_thePath']
-			) . '<br>' . $LANG->sL('LLL:EXT:lang/locallang_core.php:labels.path') . ': ' . t3lib_div::fixed_lgd_cs($arrPageInfo['_thePath'], 50);
+			) . '<br>' . $LANG->sL('LLL:EXT:lang/locallang_core.php:labels.path') . ': ' . GeneralUtility::fixed_lgd_cs($arrPageInfo['_thePath'], 50);
 			$this->content.=$this->objDoc->startPage($LANG->getLL("title"));
 			$this->content.=$this->objDoc->header($LANG->getLL("title"));
 			$this->content.=$this->objDoc->spacer(5);
-			$this->content.=$this->objDoc->section("",$this->objDoc->funcMenu($strHeaderSection,t3lib_BEfunc::getFuncMenu($this->id,"SET[function]",$this->MOD_SETTINGS["function"],$this->MOD_MENU["function"])));
+			$this->content.=$this->objDoc->section("",$this->objDoc->funcMenu($strHeaderSection,BackendUtility::getFuncMenu($this->id,"SET[function]",$this->MOD_SETTINGS["function"],$this->MOD_MENU["function"])));
 			$this->content.=$this->objDoc->divider(5);
 			if ($this->arrSurveyItems) {
 				$this->extObjContent();
@@ -115,7 +117,7 @@ class tx_pbsurvey_module1 extends t3lib_SCbase {
 			}
 			$this->content.=$this->objDoc->spacer(10);
 		} else {
-			$this->objDoc = t3lib_div::makeInstance("mediumDoc");
+			$this->objDoc = GeneralUtility::makeInstance("TYPO3\\CMS\\Backend\\Template\\MediumDocumentTemplate");
 			$this->objDoc->backPath = $BACK_PATH;
 			$this->content.=$this->objDoc->startPage($LANG->getLL("title"));
 			$this->content.=$this->objDoc->header($LANG->getLL("title"));
@@ -188,8 +190,8 @@ class tx_pbsurvey_module1 extends t3lib_SCbase {
     	$arrSelectConf['where'] .= ' AND pid=' . intval($this->id);
 		$arrSelectConf['where'] .= ' AND ' . $this->strItemsTable . '.sys_language_uid IN (0,-1)';
 		$arrSelectConf['where'] .= ' AND ((question_type>=1 AND question_type<=16) OR question_type IN (23,24))';
-		$arrSelectConf['where'] .= t3lib_BEfunc::BEenableFields($this->strItemsTable);
-		$arrSelectConf['where'] .= t3lib_BEfunc::deleteClause($this->strItemsTable);
+		$arrSelectConf['where'] .= BackendUtility::BEenableFields($this->strItemsTable);
+		$arrSelectConf['where'] .= BackendUtility::deleteClause($this->strItemsTable);
 		$arrSelectConf['orderBy'] = 'sorting ASC';
 		$dbRes = $GLOBALS['TYPO3_DB']->exec_SELECTquery($arrSelectConf['selectFields'],$this->strItemsTable,$arrSelectConf['where'],'',$arrSelectConf['orderBy'],'');
 		while ($arrRow =$GLOBALS['TYPO3_DB']->sql_fetch_assoc($dbRes)){
@@ -230,8 +232,8 @@ class tx_pbsurvey_module1 extends t3lib_SCbase {
 		$arrSelectConf['selectFields'] = '*';
 		$arrSelectConf['where'] = '1=1';
     	$arrSelectConf['where'] .= ' AND pid=' . intval($this->id);
-		$arrSelectConf['where'] .= t3lib_BEfunc::BEenableFields($this->strResultsTable);
-		$arrSelectConf['where'] .= t3lib_BEfunc::deleteClause($this->strResultsTable);
+		$arrSelectConf['where'] .= BackendUtility::BEenableFields($this->strResultsTable);
+		$arrSelectConf['where'] .= BackendUtility::deleteClause($this->strResultsTable);
 		$dbRes=$GLOBALS['TYPO3_DB']->exec_SELECTquery($arrSelectConf['selectFields'],$this->strResultsTable,$arrSelectConf['where']);
 		$arrOutput['all'] = $GLOBALS['TYPO3_DB']->sql_num_rows($dbRes);
 		$arrSelectConf['where'] .= ' AND finished=1';
@@ -246,7 +248,7 @@ if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/pbsurve
 	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/pbsurvey/mod1/index.php']);
 }
 
-$SOBE = t3lib_div::makeInstance('tx_pbsurvey_module1');
+$SOBE = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tx_pbsurvey_module1');
 $SOBE->init();
 foreach($SOBE->include_once as $INC_FILE)	include_once($INC_FILE);
 $SOBE->checkExtObj();

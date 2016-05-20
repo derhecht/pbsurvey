@@ -22,39 +22,39 @@ $TCA['tx_pbsurvey_item'] = array (
 		'type' => 'question_type',
 		'typeicon_column' => 'question_type',
 		'typeicons' => array (
-			'0' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_tx_pbsurvey_item.gif',
-			'1' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_1.gif',
-			'2' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_2.gif',
-			'3' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_3.gif',
-			'4' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_4.gif',
-			'5' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_5.gif',
-			'6' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_6.gif',
-			'7' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_7.gif',
-			'8' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_8.gif',
-			'9' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_9.gif',
-			'10' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_10.gif',
-			'11' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_11.gif',
-			'12' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_12.gif',
-			'13' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_13.gif',
-			'14' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_14.gif',
-			'15' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_15.gif',
-			'16' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_16.gif',
-			'17' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_17.gif',
-			'18' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_18.gif',
-			'19' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_19.gif',
-			'20' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_20.gif',
-			'21' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_21.gif',
-			'22' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_22.gif',
-			'23' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_23.gif',
-			'24' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_24.gif',
+			'0' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_tx_pbsurvey_item.gif',
+			'1' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_1.gif',
+			'2' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_2.gif',
+			'3' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_3.gif',
+			'4' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_4.gif',
+			'5' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_5.gif',
+			'6' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_6.gif',
+			'7' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_7.gif',
+			'8' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_8.gif',
+			'9' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_9.gif',
+			'10' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_10.gif',
+			'11' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_11.gif',
+			'12' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_12.gif',
+			'13' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_13.gif',
+			'14' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_14.gif',
+			'15' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_15.gif',
+			'16' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_16.gif',
+			'17' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_17.gif',
+			'18' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_18.gif',
+			'19' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_19.gif',
+			'20' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_20.gif',
+			'21' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_21.gif',
+			'22' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_22.gif',
+			'23' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_23.gif',
+			'24' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_pbsurvey_item_24.gif',
 		),
 		'sortby' => 'sorting',
 		'delete' => 'deleted',
 		'enablecolumns' => array (
 			'disabled' => 'hidden',
 		),
-		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
-		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_tx_pbsurvey_item.gif',
+		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'tca.php',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_tx_pbsurvey_item.gif',
 	),
 //	'feInterface' => array (
 //		'fe_admin_fieldList' => 'hidden,question_type,question,question_alias,question_subtext,page_title,page_introduction,options_required,options_random,options_alignment,options_minimum_responses,options_maximum_responses,answers,answers_allow_additionional,answers_type_additional',
@@ -71,8 +71,8 @@ $TCA['tx_pbsurvey_results'] = array (
 		'enablecolumns' => array (
 			'disabled' => 'hidden',
 		),
-		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
-		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_tx_pbsurvey_results.gif',
+		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'tca.php',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_tx_pbsurvey_results.gif',
 	),
 );
 
@@ -86,40 +86,50 @@ $TCA['tx_pbsurvey_answers'] = array (
 		'enablecolumns' => array (
 			'disabled' => 'hidden',
 		),
-		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
-		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY).'icons/icon_tx_pbsurvey_results.gif',
+		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'tca.php',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icons/icon_tx_pbsurvey_results.gif',
 	),
 );
 
-t3lib_div::loadTCA('tt_content');
 	// Exclude fields from displaying and add FlexForm content
 $TCA['tt_content']['types']['list']['subtypes_excludelist'][$_EXTKEY.'_pi1']='layout,select_key,pages,recursive';
 $TCA['tt_content']['types']['list']['subtypes_addlist'][$_EXTKEY.'_pi1']='pi_flexform';
 	// Add tablename to default list of allowed tables on pages. Otherwise only in SysFolders
-t3lib_extMgm::allowTableOnStandardPages('tx_pbsurvey_item');
-t3lib_extMgm::allowTableOnStandardPages('tx_pbsurvey_results');
-t3lib_extMgm::allowTableOnStandardPages('tx_pbsurvey_answers');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_pbsurvey_item');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_pbsurvey_results');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_pbsurvey_answers');
 	// Adds Questionaire to the list of plugins in content elements of type 'Insert plugin'
-t3lib_extMgm::addPlugin(array('LLL:EXT:pbsurvey/lang/locallang_db.xml:tt_content.list_type_pi1', $_EXTKEY.'_pi1'),'list_type');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(array('LLL:EXT:pbsurvey/lang/locallang_db.xml:tt_content.list_type_pi1', $_EXTKEY.'_pi1'),'list_type');
 	// Adds an entry to the 'ds' array of the tt_content field 'pi_flexform'.
-t3lib_extMgm::addPiFlexFormValue('pbsurvey_pi1', 'FILE:EXT:pbsurvey/flexform_ds.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue('pbsurvey_pi1', 'FILE:EXT:pbsurvey/flexform_ds.xml');
 	// initialize static extension templates
-t3lib_extMgm::addStaticFile($_EXTKEY,'static/css/','default CSS-styles');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY,'static/css/','default CSS-styles');
 	// initialize 'context sensitive help' (csh)
-t3lib_extMgm::addLLrefForTCAdescr('tx_pbsurvey_item','EXT:pbsurvey/csh/locallang_pbsurvey_item.xml');
-t3lib_extMgm::addLLrefForTCAdescr('tx_pbsurvey_results','EXT:pbsurvey/csh/locallang_pbsurvey_results.xml');
-t3lib_extMgm::addLLrefForTCAdescr('tx_pbsurvey_answers','EXT:pbsurvey/csh/locallang_pbsurvey_answers.xml');
-t3lib_extMgm::addLLrefForTCAdescr('xEXT_pbsurvey','EXT:pbsurvey/csh/locallang_manual.xml');
-t3lib_extMgm::addLLrefForTCAdescr('_MOD_web_txpbsurveyM1','EXT:pbsurvey/csh/locallang_mod1.xml');
-t3lib_extMgm::addLLrefForTCAdescr('_MOD_web_txpbsurveyM1','EXT:pbsurvey/csh/locallang_modfunc1.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_pbsurvey_item','EXT:pbsurvey/csh/locallang_pbsurvey_item.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_pbsurvey_results','EXT:pbsurvey/csh/locallang_pbsurvey_results.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_pbsurvey_answers','EXT:pbsurvey/csh/locallang_pbsurvey_answers.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('xEXT_pbsurvey','EXT:pbsurvey/csh/locallang_manual.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('_MOD_web_txpbsurveyM1','EXT:pbsurvey/csh/locallang_mod1.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('_MOD_web_txpbsurveyM1','EXT:pbsurvey/csh/locallang_modfunc1.xml');
 	// sets the transformation mode for the RTE to "ts_css" if the extension css_styled_content is installed (default is: "ts")
-if (t3lib_extMgm::isLoaded('css_styled_content')) {
-	t3lib_extMgm::addPageTSConfig('RTE.config.tx_pbsurvey_item.page_introduction.proc.overruleMode=ts_css');
-	t3lib_extMgm::addPageTSConfig('RTE.config.tx_pbsurvey_item.question_subtext.proc.overruleMode=ts_css');
+if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('css_styled_content')) {
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('RTE.config.tx_pbsurvey_item.page_introduction.proc.overruleMode=ts_css');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('RTE.config.tx_pbsurvey_item.question_subtext.proc.overruleMode=ts_css');
 }
 if (TYPO3_MODE=='BE') {
-	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['tx_pbsurvey_pi1_wizicon'] = t3lib_extMgm::extPath($_EXTKEY).'pi1/class.tx_pbsurvey_pi1_wizicon.php';
-	t3lib_extMgm::addModule('web','txpbsurveyM1','',t3lib_extMgm::extPath($_EXTKEY).'mod1/');
-	t3lib_extMgm::insertModuleFunction('web_txpbsurveyM1','tx_pbsurvey_modfunc1',t3lib_extMgm::extPath($_EXTKEY).'modfunc1/class.tx_pbsurvey_modfunc1.php','LLL:EXT:pbsurvey/lang/locallang_modfunc1.xml:moduleFunction');
+	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['tx_pbsurvey_pi1_wizicon'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'pi1/class.tx_pbsurvey_pi1_wizicon.php';
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addModule('web','txpbsurveyM1','',\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'mod1/');
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::insertModuleFunction('web_txpbsurveyM1','tx_pbsurvey_modfunc1',\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'modfunc1/class.tx_pbsurvey_modfunc1.php','LLL:EXT:pbsurvey/lang/locallang_modfunc1.xml:moduleFunction');
+
+		// Register conditions wizard
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addModulePath(
+		'wizard_pbsurvey_conditions',
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'wizard2/'
+	);
+			// Register answers wizard
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addModulePath(
+		'wizard_pbsurvey_answers',
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'wizard/'
+	);
 }
 ?>

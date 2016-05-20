@@ -21,7 +21,8 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-require_once(PATH_tslib.'class.tslib_pibase.php');
+use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use \TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Frontend Module for the 'pbsurvey' extension.
@@ -30,7 +31,7 @@ require_once(PATH_tslib.'class.tslib_pibase.php');
  * @package TYPO3
  * @subpackage pbsurvey
  */
-class tx_pbsurvey_pi1 extends tslib_pibase {
+class tx_pbsurvey_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
 	var $prefixId = 'tx_pbsurvey_pi1';
 	var $scriptRelPath = 'pi1/class.tx_pbsurvey_pi1.php';
 	var $extKey = 'pbsurvey';
@@ -116,7 +117,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 		);
 		if (is_array($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey][$this->prefixId]['setFFconfig'])) {
 			foreach($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey][$this->prefixId]['setFFconfig'] as $_funcRef) {
-				$arrSelectConf = t3lib_div::callUserFunction($_funcRef,$arrFFConfig, $this);
+				$arrSelectConf = GeneralUtility::callUserFunction($_funcRef,$arrFFConfig, $this);
 			}
 		}
 		return $arrOutput = $this->getFFconfig($arrFFConfig);
@@ -200,7 +201,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 	function setUserName() {
 		$this->arrSessionData = $GLOBALS['TSFE']->fe_user->getKey('ses','surveyData');
 		$this->arrSessionData['uid'] = $GLOBALS['TSFE']->loginUser?$GLOBALS['TSFE']->fe_user->user['uid']:0;
-		$this->arrSessionData['uip'] = t3lib_div::getIndpEnv('REMOTE_ADDR');
+		$this->arrSessionData['uip'] = GeneralUtility::getIndpEnv('REMOTE_ADDR');
 		if (isset($_COOKIE[$this->extKey][$this->arrConfig['pid']])&& $this->arrConfig['anonymous_mode'] && !$GLOBALS['TSFE']->fe_user->user['uid']) {
 			foreach ($_COOKIE[$this->extKey][$this->arrConfig['pid']] as $strName => $mixValue) {
 	  			$this->arrSessionData[$strName] = $mixValue;
@@ -297,9 +298,9 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 					}
 				} else {
 					// delete items from arrUserData that are skipped
-					if ($blnPageCondition==FALSE) {
-						unset($this->arrUserData[$item['uid']]);
-					}
+					//if ($blnPageCondition==FALSE) {
+					//	unset($this->arrUserData[$arrItem['uid']]);
+					//}
 					$this->intPastItems++;
 					if ($arrItem['question_type'] <= 16 || $arrItem['question_type'] == 23 || $arrItem['question_type'] == 24) {
 						$this->intCurrentItem++;
@@ -335,7 +336,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 				}
 				// Delete all items behind the stage if survey not updatable
 				if ($this->arrConfig['access_level']!=2) {
-					unset($this->arrUserData[$item['uid']]);
+					unset($this->arrUserData[$arrItem['uid']]);
 				}
 			}
 		}
@@ -432,6 +433,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 	function processCondition($arrQuestion) {
 		$intFound = 0;
 		$intGroup = 0;
+		$arrRuleCond = array();
 		$arrConditions = unserialize($arrQuestion['conditions']);
 		if ($arrConditions) {
 			foreach ($arrConditions['grps'] as $arrGrp ) { // Groups is OR
@@ -441,24 +443,24 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 						$arrRuleCond[$intRule] = $this->conditionAnswers($this->arrUserData[$arrRule['field']],$arrRule);
 						$intRule++;
 						$intFound++;
-					} else if ($rule['operator']=='set') {
+					} else if ($arrRule['operator']=='set') {
 						$arrRuleCond[$intRule] = false;
 						$intRule++;
 						$intFound++;
-					} else if ($rule['operator']=='notset') {
+					} else if ($arrRule['operator']=='notset') {
 						$arrRuleCond[$intRule] = true;
 						$intRule++;
 						$intFound++;
 					}
 				}
-				if (is_array($arrRuleCond) && count($arrRuleCond)==array_sum($arrRuleCond)) {
+				if (count($arrRuleCond) == array_sum($arrRuleCond)) {
 					$arrGrpCond[$intGroup]=true;
 				} else {
 					$arrGrpCond[$intGroup]=false;
 				}
 				$intGroup++;
 			}
-			$blnOutput = ($intFound==0?true:in_array(true,$arrGrpCond));
+			$blnOutput = ($intFound == 0 ? true : in_array(true, $arrGrpCond));
 		} else {
 			$blnOutput = true;
 		}
@@ -544,7 +546,9 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 	 * @return   void
 	 */
 	function callHeader($strInput) {
-		header('Location: '.t3lib_div::locationHeaderUrl($this->pi_getPageLink($this->arrConfig[$strInput])));
+		header('Location: ' . GeneralUtility::locationHeaderUrl(
+				$this->pi_getPageLink($this->arrConfig[$strInput])
+		));
 		exit;
 	}
 
@@ -559,7 +563,9 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 			$arrParameters[$this->prefixId . '[total]'] = $this->scoringTotal();
 			$arrParameters[$this->prefixId . '[score]'] = $this->scoringUser();
 			$intUrl = $this->scoringLevel($arrParameters[$this->prefixId . '[score]']);
-			header('Location: '.t3lib_div::locationHeaderUrl($this->pi_getPageLink($intUrl, '', $arrParameters)));
+			header('Location: ' . GeneralUtility::locationHeaderUrl(
+				$this->pi_getPageLink($intUrl, '', $arrParameters)
+			));
 			exit;
 		} else {
 			$strOutput = $this->surveyError('failed_scoring');
@@ -574,6 +580,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 	 * @return   integer	Maximum score
 	 */
 	function scoringTotal() {
+		$intOutput = 0;
 		foreach($this->arrSurveyItems as $arrQuestion) {
 			$intQuestionTotal = 0;
 			$intMax = 0;
@@ -619,6 +626,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 	 * @return   integer	User score
 	 */
 	function scoringUser() {
+		$intOutput = 0;
 		$arrAllowed = array(1, 2, 3, 6, 8, 23);
 		foreach($this->arrUserData as $intKey => $arrUserAnswers) {
 			if (in_array($this->arrSurveyItems[$intKey]['question_type'], $arrAllowed)) {
@@ -696,7 +704,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 	function callHook($arrItem) {
 		if (is_array($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey][$this->prefixId]['processHookItem'])) {
 			foreach($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey][$this->prefixId]['processHookItem'] as $_classRef) {
-				$_procObj = & t3lib_div::getUserObj($_classRef);
+				$_procObj = & GeneralUtility::getUserObj($_classRef);
 				$strOutput = $_procObj->hookItemProcessor($arrItem, $this);
 			}
 			return $strOutput;
@@ -786,9 +794,9 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 	 * @return	object		Object of sr_freecap
 	 */
 	function checkCaptcha() {
-		if (t3lib_extMgm::isLoaded('sr_freecap') ) {
-			require_once(t3lib_extMgm::extPath('sr_freecap').'pi2/class.tx_srfreecap_pi2.php');
-			$objOut = t3lib_div::makeInstance('tx_srfreecap_pi2');
+		if (ExtensionManagementUtility::isLoaded('sr_freecap') ) {
+			require_once(ExtensionManagementUtility::extPath('sr_freecap') . 'pi2/class.tx_srfreecap_pi2.php');
+			$objOut = GeneralUtility::makeInstance('tx_srfreecap_pi2');
 		}
 		return $objOut;
 	}
@@ -1586,10 +1594,6 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 						if ($arrQuestion['value']==$this->arrUserData[$arrQuestion['uid']][$arrQuestion['rowcounter']][0]) {
 						   $arrQuestion['checked'] = 'checked="checked"';
 						}
-					} else {
-						if (trim($arrCol[2])=='on') {
-						   $arrQuestion['checked'] = 'checked="checked"';
-						}
 					}
 					$arrHtmlCols[] = $this->cObj->substituteMarkerArray($GLOBALS['TSFE']->cObj->getSubpart($strTemplate, '###COLUMNS###'), $arrQuestion, '###|###', 1);
 				}
@@ -1886,7 +1890,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 		$arrSelectConf['where'] .= $this->cObj->enableFields($this->strResultsTable);
 		if (is_array($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey][$this->prefixId]['beforeReadPreviousUser'])) {
 			foreach($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey][$this->prefixId]['beforeReadPreviousUser'] as $_funcRef) {
-				$arrSelectConf = t3lib_div::callUserFunction($_funcRef,$arrSelectConf, $this);
+				$arrSelectConf = GeneralUtility::callUserFunction($_funcRef, $arrSelectConf, $this);
 			}
 		}
 		$dbRes = $GLOBALS['TYPO3_DB']->exec_SELECTquery($arrSelectConf['selectFields'], $this->strResultsTable, $arrSelectConf['where'], $arrSelectConf['groupBy'], $arrSelectConf['orderBy'], $arrSelectConf['limit']);
@@ -1900,7 +1904,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 			$arrSelectConf['where'] .= $this->cObj->enableFields($this->strAnswersTable);
 			$dbRes = $GLOBALS['TYPO3_DB']->exec_SELECTquery($arrSelectConf['selectFields'],$this->strAnswersTable,$arrSelectConf['where'],'','','');
 			if (strlen($arrRes['history']) > 0) {
-				$this->history = t3lib_div::intExplode(',', $arrRes['history']);
+				$this->history = GeneralUtility::intExplode(',', $arrRes['history']);
 			}
 			while ($arrRow =$GLOBALS['TYPO3_DB']->sql_fetch_assoc($dbRes)) {
 				array_walk($arrRow, array($this,'array_htmlspecialchars'));
@@ -1929,7 +1933,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 		$arrOutput = array($arrAnswers,$intRowCount,$arrRes);
 		if (is_array($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey][$this->prefixId]['afterReadPreviousUser'])) {
 			foreach($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey][$this->prefixId]['afterReadPreviousUser'] as $_funcRef) {
-				$arrOutput = t3lib_div::callUserFunction($_funcRef,$arrOutput, $this);
+				$arrOutput = GeneralUtility::callUserFunction($_funcRef, $arrOutput, $this);
 			}
 		}
 		return $arrOutput;
@@ -2085,7 +2089,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 		}
 	  	if(is_array($arrDeleteAnswers)) {
 			$strWhere = '1=1';
-		 	$strWhere .= ' AND uid IN (' . t3lib_div::csvValues($arrDeleteAnswers,',',"'") . ')';
+		 	$strWhere .= ' AND uid IN (' . GeneralUtility::csvValues($arrDeleteAnswers, ',', "'") . ')';
 		 	$strWhere .= ' AND pid=' . intval($intPage);
 			$strWhere .= ' AND result=' . intval($intResult);
 		 	$dbRes = $GLOBALS['TYPO3_DB']->exec_DELETEquery($this->strAnswersTable,$strWhere);
@@ -2099,7 +2103,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 		}
 		if(is_array($arrDeleteQuestions)) {
 			$strWhere = '1=1';
-		 	$strWhere .= ' AND question IN (' . t3lib_div::csvValues($arrDeleteQuestions,',',"'") . ')';
+		 	$strWhere .= ' AND question IN (' . GeneralUtility::csvValues($arrDeleteQuestions, ',', "'") . ')';
 		 	$strWhere .= ' AND pid=' . intval($intPage);
 			$strWhere .= ' AND result=' . intval($intResult);
 		 	$dbRes = $GLOBALS['TYPO3_DB']->exec_DELETEquery($this->strAnswersTable,$strWhere);
@@ -2136,7 +2140,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 
 		if (!empty($removeItems)) {
 			$whereClause = '1=1';
-			$whereClause .= ' AND question IN (' . t3lib_div::csvValues($removeItems, ',', "'") . ')';
+			$whereClause .= ' AND question IN (' . GeneralUtility::csvValues($removeItems, ',', "'") . ')';
 			$whereClause .= ' AND pid=' . intval($this->arrConfig['pid']);
 			$whereClause .= ' AND result=' . intval($this->arrSessionData['rid']);
 
@@ -2256,6 +2260,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 		$dbRes = $GLOBALS['TYPO3_DB']->exec_SELECTquery($fields, $table, $where);
 		$arrRes = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($dbRes);
 		$array = explode(',', $fields);
+		$return = '';
 		foreach($array as $value){
 			if($arrRes[$value]){
 				if($answer){
@@ -2343,7 +2348,7 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 	 */
 	protected function encodeValidationData(array $validation) {
 		$encodedValidation = base64_encode(serialize($this->arrValidation));
-		$encodedValidationHash = t3lib_div::hmac($encodedValidation);
+		$encodedValidationHash = GeneralUtility::hmac($encodedValidation);
 		return $encodedValidationHash . '__' . $encodedValidation;
 	}
 
@@ -2357,8 +2362,8 @@ class tx_pbsurvey_pi1 extends tslib_pibase {
 		$validation = NULL;
 
 			// Check hash on validation data:
-		$dataParts = t3lib_div::trimExplode('__', (string) $data);
-		if (count($dataParts) === 2 && $dataParts[0] === t3lib_div::hmac($dataParts[1])) {
+		$dataParts = GeneralUtility::trimExplode('__', (string) $data);
+		if (count($dataParts) === 2 && $dataParts[0] === GeneralUtility::hmac($dataParts[1])) {
 			$validation = unserialize(base64_decode($dataParts[1]));
 		}
 
