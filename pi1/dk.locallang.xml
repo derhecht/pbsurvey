@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallangExt>
+	<data type="array">
+		<languageKey index="dk" type="array">
+			<label index="no_items">Det er ingen spørgsmål at vise.</label>
+			<label index="access_single_no_update">Du kan kun svare een gang, og du har allerede svaret på denne undersøgelse.</label>
+			<label index="access_single_update_expired">Du kan ikke længere opdatere dine svar. Opdateringsperioden er udløbet.</label>
+			<label index="access_user_maximum">Det maksimale antal svar til denne undersøgelse er nået.</label>
+			<label index="access_survey_maximum">Undersøgelsen er afsluttet. Det er ikke muligt at afgive svar længere.</label>
+			<label index="value_none">-- Ingen --</label>
+			<label index="value_true">Rigtigt</label>
+			<label index="value_false">Forkert</label>
+			<label index="value_yes">Ja</label>
+			<label index="value_no">Nej</label>
+			<label index="js_required_select">Vælg en værdi for spørgsmål nummer %q</label>
+			<label index="js_required_enter">Indtast en værdi for spørgsmål nummer %q</label>
+			<label index="js_required_enter_multiple">Indtast værdier for alle punkter i spørgsmål nummer %q</label>
+			<label index="js_required_matrix_check">Vælg MINDST en værdi for spørgsmål nummer %q</label>
+			<label index="js_required_matrix_value">Indtast MINDST en værdi for spørgsmål nummer %q</label>
+			<label index="js_required_matrix_radio">Vælg en værdi for hver række i spørgsmål nummer %q</label>
+			<label index="js_required_date">Indtast en dato for spørgsmål nummer %q</label>
+			<label index="js_required_numeric">Indtast et tal for spørgsmål nummer %q</label>
+			<label index="js_numeric">Tjek at alle værdier for spørsgmål nummer %q er tal.</label>
+			<label index="js_sum">Summen af svarene for spørgsmål nummer %q skal være %t. Den nuværende værdi er %v</label>
+			<label index="js_minimum_date">Indtast en dato som er STØRRE end eller lig med %d for spørgsmål nummer %q</label>
+			<label index="js_maximum_date">Indtast en dato som er MINDRE end eller lig med %d for spørgsmål nummer %q</label>
+			<label index="js_date_notvalid">Indtast en dato i formattet dd/mm/åååå eller dd-mm-åååå for spørgsmål nummer %q</label>
+			<label index="js_month_notvalid">Måned skal være mellem 1 og 12 for spørgsmål nummer %q</label>
+			<label index="js_day_notvalid">Dag skal være mellem 1 og 31 for for spørgsmål nummer %q</label>
+			<label index="js_month_not31">Måned %m har ikke 31 dage i spørgsmål nummer %q</label>
+			<label index="js_februari_notvalid">Februar %y har ikke mere end %d dage i spørgsmål nummer %q</label>
+			<label index="js_minimum_responses">Vælg MINIMUM %v værdier for spørgsmål nummer %q</label>
+			<label index="js_maximum_responses">Vælg MAKSIMUM %v værdier for spørgsmål nummer %q</label>
+			<label index="js_minimum_responses_enter">Indtast MINIMUM %v værdier for spørgsmål nummer %q</label>
+			<label index="js_maximum_responses_enter">Indtast MAKSIMUM %v værdier for spørgsmål nummer %q</label>
+			<label index="js_minimum_value">Indtast en værdi som er STØRRE end eller lig med %v for spørgsmål nummer %q</label>
+			<label index="js_maximum_value">Indtast en værdi som er MINDRE end eller lig med %v for spørgsmål nummer %q</label>
+			<label index="js_email">Skriv en gyldig emailadresse for spørgsmål nummer %q</label>
+			<label index="js_ranking">Point værdimængde skal være mellem 1 og %v for spørgsmål nummer %q</label>
+			<label index="js_ranking_double">Hver værdimængde kan kun skrives ind en gang for spørgsmål nummer %q</label>
+			<label index="comment_responses_both">Vælg mindst ###OPTIONS_MINIMUM_RESPONSES### svar og ikke mere end ###OPTIONS_MAXIMUM_RESPONSES### svar.</label>
+			<label index="comment_responses_minimum">Vælg mindst ###OPTIONS_MINIMUM_RESPONSES### svar.</label>
+			<label index="comment_responses_maximum">Vælg ikke mere end ###OPTIONS_MAXIMUM_RESPONSES### svar.</label>
+			<label index="comment_sum">Summen af de indskrevne numre skal være lig med ###TOTAL_NUMBER###.</label>
+			<label index="comment_date_both">Værdien skal være mellem ###MINIMUM_DATE### og ###MAXIMUM_DATE###, til og med.</label>
+			<label index="comment_date_minimum">Værdien skal være større end eller lig med ###MINIMUM_DATE###.</label>
+			<label index="comment_date_maximum">Værdien skal være mindre end eller lig med ###MAXIMUM_DATE###.</label>
+			<label index="comment_number_both">Værdien skal være mellem ###MINIMUM_VALUE### og ###MAXIMUM_VALUE###, til og med.</label>
+			<label index="comment_number_minimum">Værdien skal være større end eller lig med ###MINIMUM_VALUE###.</label>
+			<label index="comment_number_maximum">Værdien skal være mindre end eller lig med ###MAXIMUM_VALUE###.</label>
+			<label index="comment_responses_enter_both">Indtast mindst ###OPTIONS_MINIMUM_RESPONSES### svar, og ikke flere end ###OPTIONS_MAXIMUM_RESPONSES### svar.</label>
+			<label index="comment_responses_enter_minimum">Indtast MINIMUM ###OPTIONS_MINIMUM_RESPONSES### svar.</label>
+			<label index="comment_responses_enter_maximum">Indtast MAXIMUM ###OPTIONS_MAXIMUM_RESPONSES### svar.</label>
+			<label index="comment_ranking">Ordn nedenstående punkter ved hjælp af talværdier. Start med 1.</label>
+			<label index="submit">Send</label>
+			<label index="back">Tilbage</label>
+			<label index="cancel">Afbryd</label>
+			<label index="username">Indtast brugernavn</label>
+			<label index="continue">Forsæt</label>
+			<label index="close">Luk vindue</label>
+			<label index="page">Side</label>
+			<label index="page_xy">Side %x af %y</label>
+			<label index="percent">procent</label>
+			<label index="failed_saving_data">En fejl er opstået da data skulle gemmes.</label>
+			<label index="js_errors_occurred">Følgende fejl opstod:</label>
+			<label index="completion_message">Tak for din deltagelse!</label>
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="dk" type="array">
+			<label index="no_items" type="integer">203596997</label>
+			<label index="access_single_no_update" type="integer">16580367</label>
+			<label index="access_single_update_expired" type="integer">212000950</label>
+			<label index="access_user_maximum" type="integer">26755418</label>
+			<label index="access_survey_maximum" type="integer">264296681</label>
+			<label index="value_none" type="integer">166300802</label>
+			<label index="value_true" type="integer">260209908</label>
+			<label index="value_false" type="integer">260251826</label>
+			<label index="value_yes" type="integer">154974727</label>
+			<label index="value_no" type="integer">196073266</label>
+			<label index="js_required_select" type="integer">199719066</label>
+			<label index="js_required_enter" type="integer">247135623</label>
+			<label index="js_required_enter_multiple" type="integer">208524952</label>
+			<label index="js_required_matrix_check" type="integer">191641847</label>
+			<label index="js_required_matrix_value" type="integer">253654596</label>
+			<label index="js_required_matrix_radio" type="integer">172401077</label>
+			<label index="js_required_date" type="integer">153215521</label>
+			<label index="js_required_numeric" type="integer">136193738</label>
+			<label index="js_numeric" type="integer">268187348</label>
+			<label index="js_sum" type="integer">238098527</label>
+			<label index="js_minimum_date" type="integer">190669410</label>
+			<label index="js_maximum_date" type="integer">126072054</label>
+			<label index="js_date_notvalid" type="integer">174368081</label>
+			<label index="js_month_notvalid" type="integer">120327672</label>
+			<label index="js_day_notvalid" type="integer">32361549</label>
+			<label index="js_month_not31" type="integer">155137732</label>
+			<label index="js_februari_notvalid" type="integer">10016674</label>
+			<label index="js_minimum_responses" type="integer">188531518</label>
+			<label index="js_maximum_responses" type="integer">268333063</label>
+			<label index="js_minimum_responses_enter" type="integer">191397191</label>
+			<label index="js_maximum_responses_enter" type="integer">94382603</label>
+			<label index="js_minimum_value" type="integer">129657279</label>
+			<label index="js_maximum_value" type="integer">196854896</label>
+			<label index="js_email" type="integer">194273213</label>
+			<label index="js_ranking" type="integer">257621170</label>
+			<label index="js_ranking_double" type="integer">154447963</label>
+			<label index="comment_responses_both" type="integer">265335293</label>
+			<label index="comment_responses_minimum" type="integer">95357623</label>
+			<label index="comment_responses_maximum" type="integer">145433433</label>
+			<label index="comment_sum" type="integer">224815504</label>
+			<label index="comment_date_both" type="integer">233881771</label>
+			<label index="comment_date_minimum" type="integer">4267006</label>
+			<label index="comment_date_maximum" type="integer">80384088</label>
+			<label index="comment_number_both" type="integer">195238927</label>
+			<label index="comment_number_minimum" type="integer">103267436</label>
+			<label index="comment_number_maximum" type="integer">57536240</label>
+			<label index="comment_responses_enter_both" type="integer">82665237</label>
+			<label index="comment_responses_enter_minimum" type="integer">144580239</label>
+			<label index="comment_responses_enter_maximum" type="integer">179315526</label>
+			<label index="comment_ranking" type="integer">52726100</label>
+			<label index="submit" type="integer">172833558</label>
+			<label index="back" type="integer">5603241</label>
+			<label index="cancel" type="integer">245659783</label>
+			<label index="username" type="integer">258150986</label>
+			<label index="continue" type="integer">168557454</label>
+			<label index="close" type="integer">160116745</label>
+			<label index="page" type="integer">26464201</label>
+			<label index="page_xy" type="integer">37567395</label>
+			<label index="percent" type="integer">55898183</label>
+			<label index="failed_saving_data" type="integer">207550776</label>
+			<label index="js_errors_occurred" type="integer">82011405</label>
+			<label index="completion_message" type="integer">148096490</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="dk" type="array">
+			<label index="access_single_update_expired">You cannot update your response anymore. The days for update have expired.</label>
+			<label index="js_errors_occurred">The following error(s) occured:</label>
+			<label index="js_numeric">Please make sure that all values entered for question number %q are numeric.</label>
+			<label index="js_email">Please enter a valid email address for question number %q</label>
+			<label index="comment_ranking">Rank the items below, using numeric values starting with 1.</label>
+			<label index="completion_message">Thank you for taking the survey!</label>
+		</languageKey>
+	</orig_text>
+</T3locallangExt>

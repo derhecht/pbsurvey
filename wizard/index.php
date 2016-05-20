@@ -22,11 +22,13 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-unset($MCONF);
-require ("conf.php");
-require ($BACK_PATH.'init.php');
-require ($BACK_PATH."template.php");
-$LANG->includeLLFile('EXT:pbsurvey/lang/locallang_wiz.xml');
+if (!isset($MCONF)) {
+	require('conf.php');
+}
+
+use \TYPO3\CMS\Backend\Utility\BackendUtility;
+use \TYPO3\CMS\Core\Utility\GeneralUtility;
+use \TYPO3\CMS\Backend\Utility\IconUtility;
 
 /**
  * Answers wizard for the 'pbsurvey' extension.
@@ -48,6 +50,13 @@ class tx_pbsurvey_answers_wiz {
 	var $blnLocalization = FALSE; // If true, record is localization.
 	var $arrl18n_diffsource = array(); // Answers from the default language
 
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
+		$GLOBALS['LANG']->includeLLFile('EXT:pbsurvey/lang/locallang_wiz.xml');
+		$GLOBALS['SOBE'] = $this;
+	}
     /**********************************
 	 *
 	 * Configuration functions
@@ -62,10 +71,12 @@ class tx_pbsurvey_answers_wiz {
 	function init()	{
 		global $BACK_PATH;
 		$this->strExtKey = 'tx_pbsurvey';
-		$this->arrWizardParameters = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('P');
-		$this->arrTableParameters = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP($this->strExtKey);
-		$this->blnXmlStorage = $this->arrWizardParameters['params']['xmlOutput'];
-		$this->objDoc = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate');
+		$this->arrWizardParameters = GeneralUtility::_GP('P');
+		$this->arrTableParameters = GeneralUtility::_GP($this->strExtKey);
+        if (!empty($this->arrWizardParameters['params']['xmlOutput'])) {
+            $this->blnXmlStorage = $this->arrWizardParameters['params']['xmlOutput'];
+        }
+		$this->objDoc = GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate');
 		$this->objDoc->docType = 'xhtml_trans';
 		$this->objDoc->backPath = $BACK_PATH;
 		$this->objDoc->JScode = $this->objDoc->wrapScriptTags('
@@ -73,7 +84,7 @@ class tx_pbsurvey_answers_wiz {
 				document.location = URL;
 			}
 		');
-		list($strRequestUri) = explode('#',\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('REQUEST_URI'));
+		list($strRequestUri) = explode('#', GeneralUtility::getIndpEnv('REQUEST_URI'));
 		$this->objDoc->form = '<form action="'.htmlspecialchars($strRequestUri).'" method="post" name="wizardAnswers">';
 		if ($this->arrTableParameters['savedok'] || $this->arrTableParameters['saveandclosedok'])	{
 			$this->include_once[] = PATH_t3lib.'class.t3lib_tcemain.php';
@@ -145,7 +156,7 @@ class tx_pbsurvey_answers_wiz {
 			$arrOutput = $this->arrTableParameters['answer'];
 		} else {	// No data submitted
 			if ($this->blnXmlStorage)	{
-				$arrOutput = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($arrRow[$this->arrWizardParameters['field']]);
+				$arrOutput = GeneralUtility::xml2array($arrRow[$this->arrWizardParameters['field']]);
 			} else {
 				$arrOutput = $this->answersArray($arrRow[$this->arrWizardParameters['field']]);
 			}
@@ -160,7 +171,7 @@ class tx_pbsurvey_answers_wiz {
 	 * @return	string		HTML content for the form.
 	 */
 	function answersWizard()	{
-        $arrRecord=\TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($this->arrWizardParameters['table'],$this->arrWizardParameters['uid']);
+        $arrRecord = BackendUtility::getRecord($this->arrWizardParameters['table'], $this->arrWizardParameters['uid']);
         if (!in_array(intval($arrRecord['sys_language_uid']),array(-1,0))) {
         	$this->blnLocalization = TRUE;
         	 $this->l18n_diffsource($arrRecord['l18n_diffsource']);
@@ -222,9 +233,9 @@ class tx_pbsurvey_answers_wiz {
 	 * @return	void
 	 */
     function checkReference() {
-		$arrRecord=\TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($this->arrWizardParameters['table'],$this->arrWizardParameters['uid']);
+		$arrRecord = BackendUtility::getRecord($this->arrWizardParameters['table'], $this->arrWizardParameters['uid']);
 		if (!is_array($arrRecord))	{
-			\TYPO3\CMS\Backend\Utility\BackendUtility::typo3PrintError('Wizard Error','No reference to record',0);
+			BackendUtility::typo3PrintError('Wizard Error', 'No reference to record', 0);
 			exit;
 		}
     }
@@ -274,13 +285,13 @@ class tx_pbsurvey_answers_wiz {
 	 */
 	function checkSaveButtons() {
         if ($this->arrTableParameters['savedok'] || $this->arrTableParameters['saveandclosedok'])	{
-            $tce = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('t3lib_TCEmain');
+            $tce = GeneralUtility::makeInstance('t3lib_TCEmain');
             $tce->stripslashes_values=0;
             $arrData[$this->arrWizardParameters['table']][$this->arrWizardParameters['uid']][$this->arrWizardParameters['field']] = $this->answersString($this->arrTableParameters['answer']);
             $tce->start($arrData,array());
             $tce->process_datamap();
             if ($this->arrTableParameters['saveandclosedok'])	{
-                header('Location: '.\TYPO3\CMS\Core\Utility\GeneralUtility::locationHeaderUrl($this->arrWizardParameters['returnUrl']));
+                header('Location: ' . GeneralUtility::locationHeaderUrl($this->arrWizardParameters['returnUrl']));
 				exit;
             }
         }
@@ -438,12 +449,12 @@ class tx_pbsurvey_answers_wiz {
         $strOutput = '
 			</table>
 			<div id="c-saveButtonPanel">
-                <input type="image" class="c-inputButton" name="'.$this->strExtKey.'[savedok]"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/savedok.gif','').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.saveDoc',1)).' />
-                <input type="image" class="c-inputButton" name="'.$this->strExtKey.'[saveandclosedok]"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/saveandclosedok.gif','').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.saveCloseDoc',1)).' />
+                <input type="image" class="c-inputButton" name="'.$this->strExtKey.'[savedok]"'.IconUtility::skinImg($this->objDoc->backPath,'gfx/savedok.gif','').BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.saveDoc',1)).' />
+                <input type="image" class="c-inputButton" name="'.$this->strExtKey.'[saveandclosedok]"'.IconUtility::skinImg($this->objDoc->backPath,'gfx/saveandclosedok.gif','').BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.saveCloseDoc',1)).' />
                 <a href="#" onclick="'.htmlspecialchars('jumpToUrl(unescape(\''.rawurlencode($this->arrWizardParameters['returnUrl']).'\')); return false;').'">
-                <img'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/closedok.gif','width="21" height="16"').' class="c-inputButton"'.\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.closeDoc',1)).' />
+                <img'.IconUtility::skinImg($this->objDoc->backPath,'gfx/closedok.gif','width="21" height="16"').' class="c-inputButton"'.BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.closeDoc',1)).' />
                 </a>
-                <input type="image" class="c-inputButton" name="_refresh"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/refresh_n.gif','').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->getLL('forms_refresh',1)).' />
+                <input type="image" class="c-inputButton" name="_refresh"'.IconUtility::skinImg($this->objDoc->backPath,'gfx/refresh_n.gif','').BackendUtility::titleAltAttrib($LANG->getLL('forms_refresh',1)).' />
 			</div>';
         return $strOutput;
     }
@@ -458,18 +469,18 @@ class tx_pbsurvey_answers_wiz {
     function controlPanel($intLine,$intRows) {
         global $LANG;
 			if ($intLine!=0)	{
-				$arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_up]['.(($intLine+1)*2).']"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/pil2up.gif','').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->getLL('table_up',1)).' />';
+				$arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_up]['.(($intLine+1)*2).']"'.IconUtility::skinImg($this->objDoc->backPath,'gfx/pil2up.gif','').BackendUtility::titleAltAttrib($LANG->getLL('table_up',1)).' />';
 			} else {
-				$arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_bottom]['.(($intLine+1)*2).']"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/turn_down.gif','').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->getLL('table_bottom',1)).' />';
+				$arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_bottom]['.(($intLine+1)*2).']"'.IconUtility::skinImg($this->objDoc->backPath,'gfx/turn_down.gif','').BackendUtility::titleAltAttrib($LANG->getLL('table_bottom',1)).' />';
 			}
-			$arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_remove]['.(($intLine+1)*2).']"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/garbage.gif','').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->getLL('table_removeRow',1)).' />';
+			$arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_remove]['.(($intLine+1)*2).']"'.IconUtility::skinImg($this->objDoc->backPath,'gfx/garbage.gif','').BackendUtility::titleAltAttrib($LANG->getLL('table_removeRow',1)).' />';
 
 			if (($intLine+1)!=$intRows)	{
-				$arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_down]['.(($intLine+1)*2).']"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/pil2down.gif','').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->getLL('table_down',1)).' />';
+				$arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_down]['.(($intLine+1)*2).']"'.IconUtility::skinImg($this->objDoc->backPath,'gfx/pil2down.gif','').BackendUtility::titleAltAttrib($LANG->getLL('table_down',1)).' />';
 			} else {
-				$arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_top]['.(($intLine+1)*2).']"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/turn_up.gif','').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->getLL('table_top',1)).' />';
+				$arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_top]['.(($intLine+1)*2).']"'.IconUtility::skinImg($this->objDoc->backPath,'gfx/turn_up.gif','').BackendUtility::titleAltAttrib($LANG->getLL('table_top',1)).' />';
 			}
-        $arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_add]['.(($intLine+1)*2).']"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/add.gif','').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->getLL('table_addRow',1)).' />';
+        $arrOutput[] = '<input type="image" name="'.$this->strExtKey.'[row_add]['.(($intLine+1)*2).']"'.IconUtility::skinImg($this->objDoc->backPath,'gfx/add.gif','').BackendUtility::titleAltAttrib($LANG->getLL('table_addRow',1)).' />';
         return $arrOutput;
     }
 }
@@ -482,8 +493,6 @@ if (defined("TYPO3_MODE") && $TYPO3_CONF_VARS[TYPO3_MODE]["XCLASS"]["ext/pbsurve
 $SOBE = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tx_pbsurvey_answers_wiz');
 $SOBE->init();
 $SOBE->checkReference();
-// Include files?
-foreach($SOBE->include_once as $INC_FILE)	include_once($INC_FILE);
 $SOBE->answerGroup();
 $SOBE->main();
 $SOBE->printContent();

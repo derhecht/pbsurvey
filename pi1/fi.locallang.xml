@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallangExt>
+    <data type="array">
+        <languageKey index="fi" type="array">
+            <label index="no_items">Tällä hetkellä ei ole yhtään näytettävää kysymystä.</label>
+            <label index="access_single_no_update">Olet jo vastannut tähän tutkimukseen, sillä voit tehdä sen vain kertaalleen.</label>
+            <label index="access_single_update_expired">Et voi enää päivittää vastauksia, sillä päivättämisen mahdollinen päivämäärä on umpeutunut.</label>
+            <label index="access_user_maximum">Olet saavuttanut tämän tutkimuksen vastausten maksimimäärän</label>
+            <label index="access_tutkimus_maximum">Tutkimus on suljettu. Et voi enää vastata tutkimukseen.</label>
+            <label index="value_none">-- Ei mitään --</label>
+            <label index="value_true">Tosi</label>
+            <label index="value_false">Epätosi</label>
+            <label index="value_yes">Kyllä</label>
+            <label index="value_no">Ei</label>
+            <label index="js_required_select">Ole hyvä ja valitse kysymysnumerolle %q arvo </label>
+            <label index="js_required_enter">Ole hyvä ja anna kysymysnumerolle %q arvo</label>
+            <label index="js_required_enter_multiple">Ole hyvä ja anna arvot kaikille kysymysnumeron %q kohdille</label>
+            <label index="js_required_matrix_check">Ole hyvä ja valitse kysymysnumerolle %q vähintään yksi kohta</label>
+            <label index="js_required_matrix_value">Ole hyvä ja anna arvo vähintään yhdelle kysymysnumeron %q kohdalle</label>
+            <label index="js_required_matrix_radio">Ole hyvä ja valitse kysymysnumerolle %q riviä kohti yksi kohta</label>
+            <label index="js_required_date">Ole hyvä ja anna kysymysnumerolle %q päivämäärä</label>
+            <label index="js_required_numeerinen">Ole hyvä ja anna kysymysnumerolle %q numeerinen arvo</label>
+            <label index="js_numeerinen">Ole hyvä ja varmista että kaikki kysymysnumerolle %q annetut arvot ovat numeerisia.</label>
+            <label index="js_sum">Kaikkien kysymysnumerolle %q annettujen vastausten summa täytyy lisätä arvoon %t. Nykyinen summa on %v</label>
+            <label index="js_minimum_date">Ole hyvä ja anna kysymysnumerolle %q päivämäärä, joka on suurempi tai yhtäsuuri kuin %d</label>
+            <label index="js_maximum_date">Ole hyvä ja anna kysymysnumerolle %q päivämäärä, joka on pienempi tai yhtäsuuri kuin %d</label>
+            <label index="js_date_notvalid">Ole hyvä ja anna kysymysnumerolle %q päivämäärä joko muodossa dd/mm/yyyy tai dd-mm-yyyy</label>
+            <label index="js_month_notvalid">Kysymysnumeron %q kuukauden täytyy olla 1 ja 12 välillä </label>
+            <label index="js_day_notvalid">Kysymysnumeron %q päivän täytyy olla 1 ja 31 välillä</label>
+            <label index="js_month_not31">Kysymysnumeron %q kuukaudessa %m ei ole 31 päivää!</label>
+            <label index="js_februari_notvalid">Kysymysnumeron %q kohdalla vuoden %y helmikuussa ei ole %d päivää!</label>
+            <label index="js_minimum_responses">Ole hyvä ja valitse kysymysnumerolle %q vähintään %v arvoa</label>
+            <label index="js_maximum_responses">Ole hyvä äläkä valitse kysymysnumerolle %q enempää kuin %v arvoa</label>
+            <label index="js_minimum_responses_enter">Ole hyvä ja anna kysymysnumerolle %q vähintään %v arvoa</label>
+            <label index="js_maximum_responses_enter">Ole hyvä äläkä anna kysymysnumerolle %q enempää kuin %v arvoa</label>
+            <label index="js_minimum_value">Ole hyvä ja anna kysymysnumerolle %q arvo, joka on suurempi tai yhtäsuuri kuin %v</label>
+            <label index="js_maximum_value">Ole hyvä ja anna kysymysnumerolle %q arvo, joka on pienempi tai yhtäsuuri kuin %v</label>
+            <label index="js_email">Ole hyvä ja anna kysymysnumerolle %q kelvollinen sähköpostiosoite</label>
+            <label index="js_ranking">Kysymyksen %q kohdan arvostelun täytyy olla 1 ja %v välillä</label>
+            <label index="js_ranking_double">Kukin arvostelu arvo voidaan antaa kysymykselle %q vain kerran</label>
+            <label index="comment_responses_both">Valitse vähintään ###OPTIONS_MINIMUM_RESPONSES### vastausta, mutta älä valitse enempää kuin ###OPTIONS_MAXIMUM_RESPONSES### vastausta.</label>
+            <label index="comment_responses_minimum">Valitse vähintään ###OPTIONS_MINIMUM_RESPONSES### vastausta.</label>
+            <label index="comment_responses_maximum">Älä valitse enempää kuin ###OPTIONS_MAXIMUM_RESPONSES### vastausta.</label>
+            <label index="comment_sum">Annettujen numeroiden summan täytyy olla ###TOTAL_NUMBER### (kokonaissumma).</label>
+            <label index="comment_date_both">Arvon pitää olla ###MINIMUM_DATE### ja ###MAXIMUM_DATE### välillä mukaan luettuina kyseiset arvot.</label>
+            <label index="comment_date_minimum">Arvon pitää olla suurempi tai yhtäsuuri kuin ###MINIMUM_DATE###.</label>
+            <label index="comment_date_maximum">Arvon pitää olla pienempi tai yhtäsuuri kuin ###MAXIMUM_DATE###.</label>
+            <label index="comment_number_both">Arvon pitää olla ###MINIMUM_VALUE### ja ###MAXIMUM_VALUE### välillä mukaan luettuina kyseiset arvot.</label>
+            <label index="comment_number_minimum">Arvon pitää olla suurempi tai yhtäsuuri kuin ###MINIMUM_VALUE###.</label>
+            <label index="comment_number_maximum">Arvon pitää olla pienempi tai yhtäsuuri kuin ###MAXIMUM_VALUE###.</label>
+            <label index="comment_responses_enter_both">Anna vähintään ###OPTIONS_MINIMUM_RESPONSES### vastausta ja eikä enempää kuin ###OPTIONS_MAXIMUM_RESPONSES### vastausta.</label>
+            <label index="comment_responses_enter_minimum">Anna vähintään ###OPTIONS_MINIMUM_RESPONSES### vastausta.</label>
+            <label index="comment_responses_enter_maximum">Älä anna enempää kuin ###OPTIONS_MAXIMUM_RESPONSES### vastausta.</label>
+            <label index="comment_ranking">Arvostele alla olevat kohdat käyttäen numeeria arvoja alkaen numerosta 1.</label>
+            <label index="submit">Lähetä</label>
+            <label index="back">Takaisin</label>
+            <label index="cancel">Peruuta</label>
+            <label index="username">Ole hyvä ja anna käyttäjätunnus:</label>
+            <label index="continue">Jatka</label>
+            <label index="close">Sulje ikkuna</label>
+            <label index="page">Sivu</label>
+            <label index="page_xy">Sivu %x/%y</label>
+            <label index="percent">prosenttia</label>
+            <label index="failed_saving_data">Olemme pahoillamme, mutta tiedon tallentamisen aikana sattui virhe.</label>
+        </languageKey>
+	</data>
+</T3locallangExt>

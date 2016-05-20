@@ -1,19 +1,19 @@
 <?php
 /***************************************************************
 *  Copyright notice
-*  
+*
 *  (c) 2005 Patrick Broens (patrick@patrickbroens.nl)
 *  All rights reserved
 *
-*  This script is part of the Typo3 project. The Typo3 project is 
+*  This script is part of the Typo3 project. The Typo3 project is
 *  free software; you can redistribute it and/or modify
 *  it under the terms of the GNU General Public License as published by
 *  the Free Software Foundation; either version 2 of the License, or
 *  (at your option) any later version.
-* 
+*
 *  The GNU General Public License can be found at
 *  http://www.gnu.org/copyleft/gpl.html.
-* 
+*
 *  This script is distributed in the hope that it will be useful,
 *  but WITHOUT ANY WARRANTY; without even the implied warranty of
 *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -22,11 +22,13 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-unset($MCONF);	
-require ("conf.php");
-require ($BACK_PATH."init.php");
-require ($BACK_PATH."template.php");
-$LANG->includeLLFile('EXT:pbsurvey/lang/locallang_wiz.xml');
+if (!isset($MCONF)) {
+	require('conf.php');
+}
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Backend\Utility\BackendUtility;
+use \TYPO3\CMS\Backend\Utility\IconUtility;
 
 /**
  * Conditions wizard for the 'pbsurvey' extension.
@@ -48,12 +50,20 @@ class tx_pbsurvey_conditions_wiz {
   	var $arrFields = array();
   	var $blnLocalization = FALSE; // Identifies if record is localization instead of 'All' or 'Default' language
 
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
+		$GLOBALS['LANG']->includeLLFile('EXT:pbsurvey/lang/locallang_wiz.xml');
+		$GLOBALS['SOBE'] = $this;
+	}
+
     /**********************************
 	 *
 	 * Configuration functions
 	 *
 	 **********************************/
-	 
+
 	/**
 	 * Initialization of the class
 	 *
@@ -62,16 +72,16 @@ class tx_pbsurvey_conditions_wiz {
 	function init()	{
 		global $BACK_PATH;
 		$this->strExtKey = 'tx_pbsurvey';
-		$this->arrWizardParameters = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP('P');
-		$this->arrTableParameters = \TYPO3\CMS\Core\Utility\GeneralUtility::_GP($this->strExtKey);
-		$this->objDoc = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate');
+		$this->arrWizardParameters = GeneralUtility::_GP('P');
+		$this->arrTableParameters = GeneralUtility::_GP($this->strExtKey);
+		$this->objDoc = GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate');
 		$this->objDoc->backPath = $BACK_PATH;
 		$this->objDoc->JScode=$this->objDoc->wrapScriptTags('
 			function jumpToUrl(URL,formEl)	{	//
 				document.location = URL;
 			}
 		');
-		list($strRequestUri) = explode('#',\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('REQUEST_URI'));
+		list($strRequestUri) = explode('#', GeneralUtility::getIndpEnv('REQUEST_URI'));
 		$this->objDoc->form ='<form action="'.htmlspecialchars($strRequestUri).'" method="post" name="wizardConditions">';
 		if ($this->arrTableParameters['savedok'] || $this->arrTableParameters['saveandclosedok']) {
 			$this->include_once[] = PATH_t3lib.'class.t3lib_tcemain.php';
@@ -83,7 +93,7 @@ class tx_pbsurvey_conditions_wiz {
 	 * General functions
 	 *
 	 **********************************/
-	 
+
     /**
 	 * Rendering the table wizard
 	 *
@@ -92,7 +102,7 @@ class tx_pbsurvey_conditions_wiz {
 	function main()	{
         global $LANG;
         $this->previousQuestions();
-        $arrRecord=\TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($this->arrWizardParameters['table'],$this->arrWizardParameters['uid']);
+        $arrRecord = BackendUtility::getRecord($this->arrWizardParameters['table'], $this->arrWizardParameters['uid']);
         $strOutput = $this->objDoc->startPage($LANG->getLL('conditions_title'));
 		if ($this->arrWizardParameters['table'] && $this->arrWizardParameters['field'] && $this->arrWizardParameters['uid'] && is_array($this->arrPrevQuestions))	{
 			$strOutput.=$this->objDoc->section($LANG->getLL('conditions_title'),$this->conditionsWizard($arrRecord),0,1);
@@ -100,7 +110,7 @@ class tx_pbsurvey_conditions_wiz {
 			$strOutput.=$this->objDoc->section($LANG->getLL('conditions_title'),'<span class="typo3-red">'.$LANG->getLL('conditions_error',1).'</span>',0,1);
 			$strOutput.= '
 			<div id="c-saveButtonPanel">
-                <a href="#" onclick="'.htmlspecialchars('jumpToUrl(unescape(\''.rawurlencode($this->arrWizardParameters['returnUrl']).'\')); return false;').'"><img class="c-inputButton"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/closedok.gif').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.closeDoc')).'" /></a>
+                <a href="#" onclick="' . htmlspecialchars('jumpToUrl(unescape(\'' . rawurlencode($this->arrWizardParameters['returnUrl']).'\')); return false;').'"><img class="c-inputButton"'.IconUtility::skinImg($this->objDoc->backPath, 'gfx/closedok.gif') . BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.closeDoc')).'" /></a>
 			</div>';
 		}
 		$strOutput.=$this->objDoc->endPage();
@@ -117,7 +127,7 @@ class tx_pbsurvey_conditions_wiz {
 		$strOutput = $this->wizardHTML($arrTable);
 		return $strOutput;
 	}
-	
+
 	/**
 	 * Fill the table with values and check if save button has been pressed
 	 *
@@ -135,7 +145,7 @@ class tx_pbsurvey_conditions_wiz {
 		}
 		return $arrOutput;
 	}
-    
+
 	/**
 	 * Create array out of possible answers in backend answers field
 	 *
@@ -182,7 +192,7 @@ class tx_pbsurvey_conditions_wiz {
 		$arrOutput = $arrConditions['grps'];
 		return $arrOutput;
 	}
-	
+
 	/**
 	 * Outputting the accumulated content to screen
 	 *
@@ -204,13 +214,13 @@ class tx_pbsurvey_conditions_wiz {
 	 * @return	void
 	 */
     function checkReference() {
-		$arrRecord=\TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($this->arrWizardParameters['table'],$this->arrWizardParameters['uid']);
+		$arrRecord = BackendUtility::getRecord($this->arrWizardParameters['table'], $this->arrWizardParameters['uid']);
 		if (!is_array($arrRecord))	{
-			\TYPO3\CMS\Backend\Utility\BackendUtility::typo3PrintError('Wizard Error','No reference to record',0);
+			BackendUtility::typo3PrintError('Wizard Error', 'No reference to record', 0);
 			exit;
 		}
     }
-    	
+
 	/**
 	 * Perform control action when a button is pressed
 	 *
@@ -282,7 +292,7 @@ class tx_pbsurvey_conditions_wiz {
             }
         }
     }
-	
+
 	/**
 	 * Detects if a save button (up/down/around/delete) has been pressed
      * and accordingly save the data and redirect to record page
@@ -291,7 +301,7 @@ class tx_pbsurvey_conditions_wiz {
 	 */
 	function checkSaveButtons() {
         if ($this->arrTableParameters['savedok'] || $this->arrTableParameters['saveandclosedok']) {
-            $tce = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('t3lib_TCEmain');
+            $tce = GeneralUtility::makeInstance('t3lib_TCEmain');
             $tce->stripslashes_values=0;
             if (count($this->arrTableParameters['grps'])) {
 	            $arrSave['grps'] = $this->arrTableParameters['grps'];
@@ -302,18 +312,18 @@ class tx_pbsurvey_conditions_wiz {
             $tce->start($arrData,array());
 	        $tce->process_datamap();
             if ($this->arrTableParameters['saveandclosedok']) {
-                header('Location: '.\TYPO3\CMS\Core\Utility\GeneralUtility::locationHeaderUrl($this->arrWizardParameters['returnUrl']));
+                header('Location: ' . GeneralUtility::locationHeaderUrl($this->arrWizardParameters['returnUrl']));
 				exit;
             }
         }
     }
-	
+
 	/**********************************
 	 *
 	 * Rendering functions
 	 *
 	 **********************************/
-	 
+
 	/**
 	 * Creates the HTML for the Conditions Wizard:
 	 *
@@ -326,7 +336,7 @@ class tx_pbsurvey_conditions_wiz {
 		$strOutput .= $this->wizardFooter();
 		return $strOutput;
 	}
-	
+
 	/**
 	 * Draw the header of the wizard
 	 *
@@ -336,10 +346,10 @@ class tx_pbsurvey_conditions_wiz {
         $strOutput = '<table border="0" cellpadding="2" cellspacing="1">';
         return $strOutput;
     }
-    
+
 	/**
 	 * Builds the content for each conditiongroup
-	 * 
+	 *
 	 * @param	array		All conditiongroups
 	 * @return	string		HTML content for the form.
 	 */
@@ -384,7 +394,7 @@ class tx_pbsurvey_conditions_wiz {
                                 <td width="11">';
                     // No trashbin when single rule in a group
                     if (!$this->blnLocalization && count($arrSingleGroup['rule'])>1) {
-                        $strOutput .= '<input type="image" name="'.$this->strExtKey.'[rule_remove]['.$intGroupKey.']['.$intRuleKey.']"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/garbage.gif').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->getLL("conditions_ruleRemove")).' />'.chr(10);
+                        $strOutput .= '<input type="image" name="'.$this->strExtKey.'[rule_remove]['.$intGroupKey.']['.$intRuleKey.']"'.IconUtility::skinImg($this->objDoc->backPath,'gfx/garbage.gif').BackendUtility::titleAltAttrib($LANG->getLL("conditions_ruleRemove")).' />'.chr(10);
                     } else {
                     	$strOutput .='&nbsp;';
                     }
@@ -419,7 +429,7 @@ class tx_pbsurvey_conditions_wiz {
         }
         return $strOutput;
 	}
-	
+
     /**
 	 * Creates the HTML for all group control buttons
 	 *
@@ -445,7 +455,7 @@ class tx_pbsurvey_conditions_wiz {
         }
         return $arrOutput;
     }
-	
+
 	/**
 	 * Creates the HTML for a single group control button
 	 *
@@ -462,13 +472,13 @@ class tx_pbsurvey_conditions_wiz {
             'row_turnup'   => array('gfx/turn_up.gif','table_up'),
             'row_down'     => array('gfx/pil2down.gif','table_down')
         );
-        $strOutput = '<input type="image" name="'.$this->strExtKey.'['.$strName.']['.$intKey.']"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,$arrOptions[$strName][0]).\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->getLL($arrOptions[$strName][1])).' /><br />';
+        $strOutput = '<input type="image" name="'.$this->strExtKey.'['.$strName.']['.$intKey.']"'.IconUtility::skinImg($this->objDoc->backPath,$arrOptions[$strName][0]).BackendUtility::titleAltAttrib($LANG->getLL($arrOptions[$strName][1])).' /><br />';
         return $strOutput;
     }
-    
+
 	/**
 	 * Build the HTML for each answers option field and check if it was selected
-	 * Returns 
+	 * Returns
 	 *
 	 * @param	string		uid of the question
 	 * @return	array		Option list of previous questions
@@ -491,7 +501,7 @@ class tx_pbsurvey_conditions_wiz {
         }
         return $arrOutput;
 	}
-	
+
 	/**
 	 * Draw the pulldown or input field for answers
 	 *
@@ -545,7 +555,7 @@ class tx_pbsurvey_conditions_wiz {
 
 	/**
 	 * Draw the pulldown for operators
-	 * 
+	 *
 	 * @param	string		Current name
 	 * @param	array		Current rule
 	 * @return	array		HTML content for operator pulldown.
@@ -591,7 +601,7 @@ class tx_pbsurvey_conditions_wiz {
         $arrOutput[] = ($arrRule['operator']=='set'||$arrRule['operator']=='notset')?'':implode(chr(10),$this->getAnswers($strName,$arrRule));
 		return $arrOutput;
 	}
-		
+
    	/**
 	 * Draw the footer of the wizard
 	 *
@@ -602,10 +612,10 @@ class tx_pbsurvey_conditions_wiz {
         $strOutput = '
 			</table>
 			<div id="c-saveButtonPanel">
-                <input type="image" class="c-inputButton" name="'.$this->strExtKey.'[savedok]"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/savedok.gif').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.saveDoc')).'" />
-                <input type="image" class="c-inputButton" name="'.$this->strExtKey.'[saveandclosedok]"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/saveandclosedok.gif').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.saveCloseDoc')).'" />
-                <a href="#" onclick="'.htmlspecialchars('jumpToUrl(unescape(\''.rawurlencode($this->arrWizardParameters['returnUrl']).'\')); return false;').'"><img class="c-inputButton"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/closedok.gif').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.closeDoc')).'" /></a>
-                <input type="image" class="c-inputButton" name="_refresh"'.\TYPO3\CMS\Backend\Utility\IconUtility::skinImg($this->objDoc->backPath,'gfx/refresh_n.gif').\TYPO3\CMS\Backend\Utility\BackendUtility::titleAltAttrib($LANG->getLL('forms_refresh',1)).'" />
+                <input type="image" class="c-inputButton" name="'.$this->strExtKey.'[savedok]"'.IconUtility::skinImg($this->objDoc->backPath,'gfx/savedok.gif').BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.saveDoc')).'" />
+                <input type="image" class="c-inputButton" name="'.$this->strExtKey.'[saveandclosedok]"'.IconUtility::skinImg($this->objDoc->backPath,'gfx/saveandclosedok.gif').BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.saveCloseDoc')).'" />
+                <a href="#" onclick="'.htmlspecialchars('jumpToUrl(unescape(\''.rawurlencode($this->arrWizardParameters['returnUrl']).'\')); return false;').'"><img class="c-inputButton"'.IconUtility::skinImg($this->objDoc->backPath,'gfx/closedok.gif').BackendUtility::titleAltAttrib($LANG->sL('LLL:EXT:lang/locallang_core.php:rm.closeDoc')).'" /></a>
+                <input type="image" class="c-inputButton" name="_refresh"'.IconUtility::skinImg($this->objDoc->backPath,'gfx/refresh_n.gif').BackendUtility::titleAltAttrib($LANG->getLL('forms_refresh',1)).'" />
 			</div>';
         return $strOutput;
    }
@@ -624,7 +634,7 @@ class tx_pbsurvey_conditions_wiz {
 	 */
 	function previousQuestions() {
 		$arrValidTypes = array(1,2,3,4,5,7,10,11,12,13,14,15,23);
-		$arrCurRecord=\TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($this->arrWizardParameters["table"],$this->arrWizardParameters["uid"]);
+		$arrCurRecord = BackendUtility::getRecord($this->arrWizardParameters["table"], $this->arrWizardParameters["uid"]);
 		if (!in_array(intval($arrCurRecord['sys_language_uid']),array(-1,0))) {
 			$this->blnLocalization = TRUE;
 		}
@@ -632,8 +642,8 @@ class tx_pbsurvey_conditions_wiz {
     	$strWhereConf .= ' AND pid='. $this->arrWizardParameters["pid"];
 		$strWhereConf .= ' AND ' . $this->strItemsTable . '.sys_language_uid IN (0,-1)';
 		$strWhereConf .= ' AND sorting<' . $arrCurRecord["sorting"];
-		$strWhereConf .=  \TYPO3\CMS\Backend\Utility\BackendUtility::BEenableFields($this->strItemsTable);
-		$strWhereConf .=  \TYPO3\CMS\Backend\Utility\BackendUtility::deleteClause($this->strItemsTable);
+		$strWhereConf .=  BackendUtility::BEenableFields($this->strItemsTable);
+		$strWhereConf .=  BackendUtility::deleteClause($this->strItemsTable);
 		$strOrderByConf = 'sorting ASC';
 		$dbRes = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*',$this->arrWizardParameters["table"],$strWhereConf,'',$strOrderByConf);
         while($arrDbRow = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($dbRes)) {
@@ -669,7 +679,6 @@ class tx_pbsurvey_conditions_wiz {
 	 */
 	function getRecordOverlay($strTable,$arrRow,$intSysLanguageContent)	{
 		global $TCA;
-		\TYPO3\CMS\Core\Utility\GeneralUtility::loadTCA($strTable); // Load column information in TCA
 		if ($arrRow['uid']>0 && $arrRow['pid']>0)	{
 			if ($TCA[$strTable] && $TCA[$strTable]['ctrl']['languageField'] && $TCA[$strTable]['ctrl']['transOrigPointerField'])	{
 				if ($intSysLanguageContent>0)	{
@@ -678,8 +687,8 @@ class tx_pbsurvey_conditions_wiz {
 				    	$strWhereConf .= ' AND pid='.intval($arrRow['pid']);
 						$strWhereConf .= ' AND '.$TCA[$strTable]['ctrl']['languageField'].'='.intval($intSysLanguageContent);
 						$strWhereConf .= ' AND '.$TCA[$strTable]['ctrl']['transOrigPointerField'].'='.intval($arrRow['uid']);
-						$strWhereConf .=  \TYPO3\CMS\Backend\Utility\BackendUtility::BEenableFields($strTable);
-						$strWhereConf .=  \TYPO3\CMS\Backend\Utility\BackendUtility::deleteClause($strTable);
+						$strWhereConf .=  BackendUtility::BEenableFields($strTable);
+						$strWhereConf .=  BackendUtility::deleteClause($strTable);
 						$dbRes = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*',$strTable,$strWhereConf,'','','1');
 						$arrOlRow = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($dbRes);
 						if (is_array($arrOlRow))	{
@@ -713,8 +722,6 @@ if (defined("TYPO3_MODE") && $TYPO3_CONF_VARS[TYPO3_MODE]["XCLASS"]["ext/pbsurve
 $SOBE = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance("tx_pbsurvey_conditions_wiz");
 $SOBE->init();
 $SOBE->checkReference();
-// Include files?
-foreach($SOBE->include_once as $INC_FILE)	include_once($INC_FILE);
 $SOBE->main();
 $SOBE->printContent();
 ?>

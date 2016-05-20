@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallangExt>
+	<data type="array">
+		<languageKey index="fr" type="array">
+			<label index="tx_pbsurvey_item">Items du questionnaire</label>
+			<label index="tx_pbsurvey_item.question_type.I.0">Choix - Menu déroulant Database</label>
+			<label index="tx_pbsurvey_item.question_type.I.1">Choix - Réponses multiples (Cases à cocher)</label>
+			<label index="tx_pbsurvey_item.question_type.I.23">Choix - Réponses multiples (Liste de sélections)</label>
+			<label index="tx_pbsurvey_item.question_type.I.2">Choix - Une réponse (Menu déroulant)</label>
+			<label index="tx_pbsurvey_item.question_type.I.3">Choix - Une réponse (Boutons d'option)</label>
+			<label index="tx_pbsurvey_item.question_type.I.4">Choix - Vrai / Faux</label>
+			<label index="tx_pbsurvey_item.question_type.I.5">Choix - Oui / Non</label>
+			<label index="tx_pbsurvey_item.question_type.I.6">Matrice - Réponses multiples par ligne (Cases à cocher)</label>
+			<label index="tx_pbsurvey_item.question_type.I.7">Matrice - Réponses multiples par ligne (Champs texte)</label>
+			<label index="tx_pbsurvey_item.question_type.I.8">Matrice - Une réponse par ligne (Boutons d'option)</label>
+			<label index="tx_pbsurvey_item.question_type.I.9">Matrice - Echelle de valeurs (Numérique)</label>
+			<label index="tx_pbsurvey_item.question_type.I.10">Réponse ouverte - Commentaire</label>
+			<label index="tx_pbsurvey_item.question_type.I.11">Réponse ouverte - Somme</label>
+			<label index="tx_pbsurvey_item.question_type.I.12">Réponse ouverte - Date</label>
+			<label index="tx_pbsurvey_item.question_type.I.13">Réponse ouverte - Nombre</label>
+			<label index="tx_pbsurvey_item.question_type.I.14">Réponse ouverte - Une ligne</label>
+			<label index="tx_pbsurvey_item.question_type.I.15">Réponse ouverte - Une ligne ou plus</label>
+			<label index="tx_pbsurvey_item.question_type.I.16">Réponse ouverte - Vote</label>
+			<label index="tx_pbsurvey_item.question_type.I.17">Présentation - Titre</label>
+			<label index="tx_pbsurvey_item.question_type.I.18">Présentation - Ligne horizontale de séparation</label>
+			<label index="tx_pbsurvey_item.question_type.I.19">Présentation - Code HTML</label>
+			<label index="tx_pbsurvey_item.question_type.I.20">Présentation - Image</label>
+			<label index="tx_pbsurvey_item.question_type.I.21">Présentation - Message</label>
+			<label index="tx_pbsurvey_item.question_type.I.22">Saut de page &amp; Conditions</label>
+			<label index="tx_pbsurvey_item.question_type">Question: Type</label>
+			<label index="tx_pbsurvey_item.question">Question: Libellé</label>
+			<label index="tx_pbsurvey_item.question_alias">Question: Alias</label>
+			<label index="tx_pbsurvey_item.question_subtext">Question: Texte d'information</label>
+			<label index="tx_pbsurvey_item.page_title">Titre de la page (optionnel)</label>
+			<label index="tx_pbsurvey_item.page_introduction">Texte d'introduction de la page (optionnel)</label>
+			<label index="tx_pbsurvey_item.options_required">Réponse obligatoire</label>
+			<label index="tx_pbsurvey_item.options_random">Ordre aléatoire</label>
+			<label index="tx_pbsurvey_item.options_alignment.I.0">Vertical</label>
+			<label index="tx_pbsurvey_item.options_alignment.I.1">Horizontal</label>
+			<label index="tx_pbsurvey_item.options_alignment">Alignement des réponses</label>
+			<label index="tx_pbsurvey_item.options_minimum_responses">Nombre minimum de réponses autorisées</label>
+			<label index="tx_pbsurvey_item.options_maximum_responses">Nombre maximum de réponses autorisées</label>
+			<label index="tx_pbsurvey_item.options_row_heading_width">Largeur de la ligne d'en-tête</label>
+			<label index="tx_pbsurvey_item.rows">Libellé de chaques lignes (un seul par ligne: retour chariot)</label>
+			<label index="tx_pbsurvey_item.answers">Entrez les réponses: (une seule par ligne: retour chariot)</label>
+			<label index="tx_pbsurvey_item.answers_wiz">Assitsant pour les réponses</label>
+			<label index="tx_pbsurvey_item.answers_allow_additional">Autoriser une réponse additionnelle</label>
+			<label index="tx_pbsurvey_item.answers_text_additional">Réponse additionnelle</label>
+			<label index="tx_pbsurvey_item.answers_text_additional.default">Autre, merci de préciser</label>
+			<label index="tx_pbsurvey_item.answers_type_additional.I.0">Champs texte</label>
+			<label index="tx_pbsurvey_item.answers_type_additional.I.1">Boîte de texte</label>
+			<label index="tx_pbsurvey_item.answers_type_additional">Type de champs pour la réponse additionnelle</label>
+			<label index="tx_pbsurvey_item.selectbox_height">Taille de la liste de</label>
+			<label index="tx_pbsurvey_item.display_type">Type d'affichage</label>
+			<label index="tx_pbsurvey_item.display_type.I.0">Menu déroulant</label>
+			<label index="tx_pbsurvey_item.display_type.I.1">Boutons radio - Horizontal</label>
+			<label index="tx_pbsurvey_item.display_type.I.2">Boutons radio - Vertical</label>
+			<label index="tx_pbsurvey_item.default_value_tf">Valeur de défaut</label>
+			<label index="tx_pbsurvey_item.default_value_tf.I.0">--Aucun--</label>
+			<label index="tx_pbsurvey_item.default_value_tf.I.1">Vrai</label>
+			<label index="tx_pbsurvey_item.default_value_tf.I.2">Faux</label>
+			<label index="tx_pbsurvey_item.default_value_yn">Valeur de défaut</label>
+			<label index="tx_pbsurvey_item.default_value_yn.I.0">--Aucun--</label>
+			<label index="tx_pbsurvey_item.default_value_yn.I.1">Oui</label>
+			<label index="tx_pbsurvey_item.default_value_yn.I.2">Non</label>
+			<label index="tx_pbsurvey_item.default_value_txt">Valeur de défaut</label>
+			<label index="tx_pbsurvey_item.default_date">Valeur de défaut</label>
+			<label index="tx_pbsurvey_item.default_value_num">Valeur de défaut</label>
+			<label index="tx_pbsurvey_item.beginning_number">Nombre du début</label>
+			<label index="tx_pbsurvey_item.ending_number">Nombre de fin</label>
+			<label index="tx_pbsurvey_item.total_number">Réponses au total</label>
+			<label index="tx_pbsurvey_item.minimum_date">Valeur minimum</label>
+			<label index="tx_pbsurvey_item.maximum_date">Valeur maximale</label>
+			<label index="tx_pbsurvey_item.minimum_value">Valeur minimum</label>
+			<label index="tx_pbsurvey_item.maximum_value">Valeur maximale</label>
+			<label index="tx_pbsurvey_item.maximum_length">Longueur maximale</label>
+			<label index="tx_pbsurvey_item.image">Image</label>
+			<label index="tx_pbsurvey_item.image_height">Hauteur max. de l'image</label>
+			<label index="tx_pbsurvey_item.image_width">Largeur max. de l'image</label>
+			<label index="tx_pbsurvey_item.image_alignment">Alignement de l'image</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.0">Défaut</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.1">Gauche</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.2">Centre</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.3">Droite</label>
+			<label index="tx_pbsurvey_item.sql">Entrez le SQL</label>
+			<label index="tx_pbsurvey_item.email">Est une adresse E-mail</label>
+			<label index="tx_pbsurvey_item.heading">Entrez le titre</label>
+			<label index="tx_pbsurvey_item.html">Entrez le code HTML</label>
+			<label index="tx_pbsurvey_item.message">Entrez le message</label>
+			<label index="tx_pbsurvey_item.conditions">Conditions de page</label>
+			<label index="tx_pbsurvey_item.conditions_wiz">Assistant Conditions</label>
+			<label index="tx_pbsurvey_results">Résultat du questionnaire</label>
+			<label index="tx_pbsurvey_results.survey">Sondage</label>
+			<label index="tx_pbsurvey_results.user">Utilisateur</label>
+			<label index="tt_content.list_type_pi1">Questionnaire</label>
+			<label index="tx_pbsurvey_results.results">Résultats</label>
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="fr" type="array">
+			<label index="tx_pbsurvey_item" type="integer">192212772</label>
+			<label index="tx_pbsurvey_item.question_type.I.0" type="integer">74559745</label>
+			<label index="tx_pbsurvey_item.question_type.I.1" type="integer">97645285</label>
+			<label index="tx_pbsurvey_item.question_type.I.2" type="integer">197750419</label>
+			<label index="tx_pbsurvey_item.question_type.I.3" type="integer">81856395</label>
+			<label index="tx_pbsurvey_item.question_type.I.4" type="integer">49448341</label>
+			<label index="tx_pbsurvey_item.question_type.I.5" type="integer">76013657</label>
+			<label index="tx_pbsurvey_item.question_type.I.6" type="integer">52242974</label>
+			<label index="tx_pbsurvey_item.question_type.I.7" type="integer">43175661</label>
+			<label index="tx_pbsurvey_item.question_type.I.8" type="integer">83623729</label>
+			<label index="tx_pbsurvey_item.question_type.I.9" type="integer">73684626</label>
+			<label index="tx_pbsurvey_item.question_type.I.10" type="integer">212244532</label>
+			<label index="tx_pbsurvey_item.question_type.I.11" type="integer">197291047</label>
+			<label index="tx_pbsurvey_item.question_type.I.12" type="integer">46301156</label>
+			<label index="tx_pbsurvey_item.question_type.I.13" type="integer">48028729</label>
+			<label index="tx_pbsurvey_item.question_type.I.14" type="integer">35255852</label>
+			<label index="tx_pbsurvey_item.question_type.I.15" type="integer">257103504</label>
+			<label index="tx_pbsurvey_item.question_type.I.16" type="integer">140657717</label>
+			<label index="tx_pbsurvey_item.question_type.I.17" type="integer">248981960</label>
+			<label index="tx_pbsurvey_item.question_type.I.18" type="integer">200377695</label>
+			<label index="tx_pbsurvey_item.question_type.I.19" type="integer">241881524</label>
+			<label index="tx_pbsurvey_item.question_type.I.20" type="integer">67432771</label>
+			<label index="tx_pbsurvey_item.question_type.I.21" type="integer">250381949</label>
+			<label index="tx_pbsurvey_item.question_type.I.22" type="integer">260939646</label>
+			<label index="tx_pbsurvey_item.question_type" type="integer">175895632</label>
+			<label index="tx_pbsurvey_item.question" type="integer">177728086</label>
+			<label index="tx_pbsurvey_item.question_alias" type="integer">148542273</label>
+			<label index="tx_pbsurvey_item.question_subtext" type="integer">266731121</label>
+			<label index="tx_pbsurvey_item.page_title" type="integer">42353938</label>
+			<label index="tx_pbsurvey_item.page_introduction" type="integer">44895013</label>
+			<label index="tx_pbsurvey_item.options_required" type="integer">191176445</label>
+			<label index="tx_pbsurvey_item.options_random" type="integer">42092949</label>
+			<label index="tx_pbsurvey_item.options_alignment.I.0" type="integer">7135906</label>
+			<label index="tx_pbsurvey_item.options_alignment.I.1" type="integer">203120544</label>
+			<label index="tx_pbsurvey_item.options_alignment" type="integer">222512782</label>
+			<label index="tx_pbsurvey_item.options_minimum_responses" type="integer">192046728</label>
+			<label index="tx_pbsurvey_item.options_maximum_responses" type="integer">191902081</label>
+			<label index="tx_pbsurvey_item.options_row_heading_width" type="integer">229855198</label>
+			<label index="tx_pbsurvey_item.rows" type="integer">150197186</label>
+			<label index="tx_pbsurvey_item.answers" type="integer">90978500</label>
+			<label index="tx_pbsurvey_item.answers_wiz" type="integer">113564850</label>
+			<label index="tx_pbsurvey_item.answers_allow_additional" type="integer">193044762</label>
+			<label index="tx_pbsurvey_item.answers_text_additional" type="integer">172768038</label>
+			<label index="tx_pbsurvey_item.answers_text_additional.default" type="integer">36872357</label>
+			<label index="tx_pbsurvey_item.answers_type_additional.I.0" type="integer">216714131</label>
+			<label index="tx_pbsurvey_item.answers_type_additional.I.1" type="integer">190663973</label>
+			<label index="tx_pbsurvey_item.answers_type_additional" type="integer">23418776</label>
+			<label index="tx_pbsurvey_item.display_type" type="integer">123132525</label>
+			<label index="tx_pbsurvey_item.display_type.I.0" type="integer">122260548</label>
+			<label index="tx_pbsurvey_item.display_type.I.1" type="integer">213312927</label>
+			<label index="tx_pbsurvey_item.display_type.I.2" type="integer">77460328</label>
+			<label index="tx_pbsurvey_item.default_value_tf" type="integer">52224973</label>
+			<label index="tx_pbsurvey_item.default_value_tf.I.0" type="integer">56694286</label>
+			<label index="tx_pbsurvey_item.default_value_tf.I.1" type="integer">260209908</label>
+			<label index="tx_pbsurvey_item.default_value_tf.I.2" type="integer">260251826</label>
+			<label index="tx_pbsurvey_item.default_value_yn" type="integer">52224973</label>
+			<label index="tx_pbsurvey_item.default_value_yn.I.0" type="integer">56694286</label>
+			<label index="tx_pbsurvey_item.default_value_yn.I.1" type="integer">154974727</label>
+			<label index="tx_pbsurvey_item.default_value_yn.I.2" type="integer">196073266</label>
+			<label index="tx_pbsurvey_item.default_value_txt" type="integer">52224973</label>
+			<label index="tx_pbsurvey_item.default_date" type="integer">52224973</label>
+			<label index="tx_pbsurvey_item.default_value_num" type="integer">52224973</label>
+			<label index="tx_pbsurvey_item.beginning_number" type="integer">201853827</label>
+			<label index="tx_pbsurvey_item.ending_number" type="integer">39856857</label>
+			<label index="tx_pbsurvey_item.total_number" type="integer">153287722</label>
+			<label index="tx_pbsurvey_item.minimum_date" type="integer">13827915</label>
+			<label index="tx_pbsurvey_item.maximum_date" type="integer">121584388</label>
+			<label index="tx_pbsurvey_item.minimum_value" type="integer">13827915</label>
+			<label index="tx_pbsurvey_item.maximum_value" type="integer">121584388</label>
+			<label index="tx_pbsurvey_item.maximum_length" type="integer">156175968</label>
+			<label index="tx_pbsurvey_item.image" type="integer">199571973</label>
+			<label index="tx_pbsurvey_item.image_height" type="integer">103399135</label>
+			<label index="tx_pbsurvey_item.image_width" type="integer">24350122</label>
+			<label index="tx_pbsurvey_item.image_alignment" type="integer">119269544</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.0" type="integer">128029197</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.1" type="integer">155571682</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.2" type="integer">82966017</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.3" type="integer">153815495</label>
+			<label index="tx_pbsurvey_item.sql" type="integer">39720429</label>
+			<label index="tx_pbsurvey_item.email" type="integer">139440467</label>
+			<label index="tx_pbsurvey_item.heading" type="integer">149322404</label>
+			<label index="tx_pbsurvey_item.html" type="integer">86423722</label>
+			<label index="tx_pbsurvey_item.message" type="integer">65762617</label>
+			<label index="tx_pbsurvey_item.conditions" type="integer">32764280</label>
+			<label index="tx_pbsurvey_item.conditions_wiz" type="integer">116020110</label>
+			<label index="tx_pbsurvey_results" type="integer">255148473</label>
+			<label index="tx_pbsurvey_results.survey" type="integer">167616412</label>
+			<label index="tx_pbsurvey_results.user" type="integer">150585321</label>
+			<label index="tt_content.list_type_pi1" type="integer">195136475</label>
+			<label index="tx_pbsurvey_item.question_type.I.23" type="integer">246931939</label>
+			<label index="tx_pbsurvey_item.selectbox_height" type="integer">207642110</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="fr" type="array">
+		</languageKey>
+	</orig_text>
+</T3locallangExt>

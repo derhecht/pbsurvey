@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallangExt>
+	<data type="array">
+		<languageKey index="no" type="array">
+			<label index="tx_pbsurvey_item">Spørreundersøkelse punkt</label>
+			<label index="tx_pbsurvey_item.question_type.I.0">Valg - Database nedtrekk</label>
+			<label index="tx_pbsurvey_item.question_type.I.1">Valg - Mange svar (Avkrysning)</label>
+			<label index="tx_pbsurvey_item.question_type.I.2">Valg - Et svar (Nedtrekk)</label>
+			<label index="tx_pbsurvey_item.question_type.I.3">Valg - Et svar (valgknapper)</label>
+			<label index="tx_pbsurvey_item.question_type.I.4">Valg - Riktig/Galt</label>
+			<label index="tx_pbsurvey_item.question_type.I.5">Valg - Ja/Nei</label>
+			<label index="tx_pbsurvey_item.question_type.I.6">Matrise - Mange svar pr rekke (avkrysning)</label>
+			<label index="tx_pbsurvey_item.question_type.I.7">Matrise - Mange svar pr rekke (tekstbokser)</label>
+			<label index="tx_pbsurvey_item.question_type.I.8">Matrise - Et svar pr rekke (valgknapper)</label>
+			<label index="tx_pbsurvey_item.question_type.I.9">Matrise - Rangeringsskala (tall)</label>
+			<label index="tx_pbsurvey_item.question_type.I.10">Open - Kommentar</label>
+			<label index="tx_pbsurvey_item.question_type.I.11">Open - Fast sum</label>
+			<label index="tx_pbsurvey_item.question_type.I.12">Open - Dato</label>
+			<label index="tx_pbsurvey_item.question_type.I.13">Open - Tall</label>
+			<label index="tx_pbsurvey_item.question_type.I.14">Open - En linje</label>
+			<label index="tx_pbsurvey_item.question_type.I.15">Open - En eller flere linjer</label>
+			<label index="tx_pbsurvey_item.question_type.I.16">Open - Rangering</label>
+			<label index="tx_pbsurvey_item.question_type.I.17">Presentation - Tittel</label>
+			<label index="tx_pbsurvey_item.question_type.I.18">Presentasjon - Horisontal strek (HR)</label>
+			<label index="tx_pbsurvey_item.question_type.I.19">Presentasjon - HTML</label>
+			<label index="tx_pbsurvey_item.question_type.I.20">Presentasjon - Bilde</label>
+			<label index="tx_pbsurvey_item.question_type.I.21">Presentasjon - Melding</label>
+			<label index="tx_pbsurvey_item.question_type.I.22">Sideskift &amp; vilkår</label>
+			<label index="tx_pbsurvey_item.question_type">Spørsmålstype</label>
+			<label index="tx_pbsurvey_item.question">Spørsmål</label>
+			<label index="tx_pbsurvey_item.question_alias">Spørsmål alias</label>
+			<label index="tx_pbsurvey_item.question_subtext">Spørsmål undertekst</label>
+			<label index="tx_pbsurvey_item.page_title">Side tittel</label>
+			<label index="tx_pbsurvey_item.page_introduction">Sideintroduksjon</label>
+			<label index="tx_pbsurvey_item.options_required">Obligatorisk</label>
+			<label index="tx_pbsurvey_item.options_random">Tilfeldig rekkefølge</label>
+			<label index="tx_pbsurvey_item.options_alignment.I.0">Loddrett</label>
+			<label index="tx_pbsurvey_item.options_alignment.I.1">Vannrett</label>
+			<label index="tx_pbsurvey_item.options_alignment">Justering av svar</label>
+			<label index="tx_pbsurvey_item.options_minimum_responses">Minste antall svar</label>
+			<label index="tx_pbsurvey_item.options_maximum_responses">Maksimalt antall svar</label>
+			<label index="tx_pbsurvey_item.options_row_heading_width">Bredde på rekketittel</label>
+			<label index="tx_pbsurvey_item.rows">Rekkenavn</label>
+			<label index="tx_pbsurvey_item.answers">Skriv inn svar</label>
+			<label index="tx_pbsurvey_item.answers_wiz">Svarhjelper</label>
+			<label index="tx_pbsurvey_item.answers_allow_additional">Tillat tilleggssvar</label>
+			<label index="tx_pbsurvey_item.answers_text_additional">Tilleggssvar</label>
+			<label index="tx_pbsurvey_item.answers_text_additional.default">Annet, venligst angi.</label>
+			<label index="tx_pbsurvey_item.answers_type_additional.I.0">Tekstboks</label>
+			<label index="tx_pbsurvey_item.answers_type_additional.I.1">Tekstareal</label>
+			<label index="tx_pbsurvey_item.answers_type_additional">Inputtype for tilleggssvar</label>
+			<label index="tx_pbsurvey_item.display_type">Visningstype</label>
+			<label index="tx_pbsurvey_item.display_type.I.0">Nedtrekk</label>
+			<label index="tx_pbsurvey_item.display_type.I.1">Radioknapper - vannrett</label>
+			<label index="tx_pbsurvey_item.display_type.I.2">Radioknapper - loddrett</label>
+			<label index="tx_pbsurvey_item.default_value_tf">Standard verdi</label>
+			<label index="tx_pbsurvey_item.default_value_tf.I.0">--Blank--</label>
+			<label index="tx_pbsurvey_item.default_value_tf.I.1">Riktig</label>
+			<label index="tx_pbsurvey_item.default_value_tf.I.2">Galt</label>
+			<label index="tx_pbsurvey_item.default_value_yn">Standard verdi</label>
+			<label index="tx_pbsurvey_item.default_value_yn.I.0">--Ingen--</label>
+			<label index="tx_pbsurvey_item.default_value_yn.I.1">Ja</label>
+			<label index="tx_pbsurvey_item.default_value_yn.I.2">Nei</label>
+			<label index="tx_pbsurvey_item.default_value_txt">Standard verdi</label>
+			<label index="tx_pbsurvey_item.default_date">Standard verdi</label>
+			<label index="tx_pbsurvey_item.default_value_num">Standard verdi</label>
+			<label index="tx_pbsurvey_item.beginning_number">Startnummer</label>
+			<label index="tx_pbsurvey_item.ending_number">Sluttnummer</label>
+			<label index="tx_pbsurvey_item.total_number">Sum svar</label>
+			<label index="tx_pbsurvey_item.minimum_date">Minste verdi</label>
+			<label index="tx_pbsurvey_item.maximum_date">Største verdi</label>
+			<label index="tx_pbsurvey_item.minimum_value">Minste verdi</label>
+			<label index="tx_pbsurvey_item.maximum_value">Største verdi</label>
+			<label index="tx_pbsurvey_item.maximum_length">Største lengde</label>
+			<label index="tx_pbsurvey_item.image">Bilde</label>
+			<label index="tx_pbsurvey_item.image_height">Maksimum bildehøyde</label>
+			<label index="tx_pbsurvey_item.image_width">Maksimum bildebredde</label>
+			<label index="tx_pbsurvey_item.image_alignment">Justering av bilde</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.0">Standard</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.1">Venstre</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.2">Senter</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.3">Høyre</label>
+			<label index="tx_pbsurvey_item.sql">Skriv inn SQL</label>
+			<label index="tx_pbsurvey_item.email">Er epost adresse</label>
+			<label index="tx_pbsurvey_item.heading">Skriv inn tittel</label>
+			<label index="tx_pbsurvey_item.html">Skriv inn HTML</label>
+			<label index="tx_pbsurvey_item.message">Skriv inn melding</label>
+			<label index="tx_pbsurvey_item.conditions">Vilkår for side</label>
+			<label index="tx_pbsurvey_item.conditions_wiz">Vilkårsveiviser</label>
+			<label index="tx_pbsurvey_results">Spørreundersøkelse resultat</label>
+			<label index="tx_pbsurvey_results.survey">Undersøkelse</label>
+			<label index="tx_pbsurvey_results.user">Bruker</label>
+			<label index="tt_content.list_type_pi1">Spørreundersøkelse</label>
+			<label index="tx_pbsurvey_results.results">Resultat</label>
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="no" type="array">
+			<label index="tx_pbsurvey_item" type="integer">192212772</label>
+			<label index="tx_pbsurvey_item.question_type.I.0" type="integer">74559745</label>
+			<label index="tx_pbsurvey_item.question_type.I.1" type="integer">97645285</label>
+			<label index="tx_pbsurvey_item.question_type.I.2" type="integer">197750419</label>
+			<label index="tx_pbsurvey_item.question_type.I.3" type="integer">81856395</label>
+			<label index="tx_pbsurvey_item.question_type.I.4" type="integer">49448341</label>
+			<label index="tx_pbsurvey_item.question_type.I.5" type="integer">76013657</label>
+			<label index="tx_pbsurvey_item.question_type.I.6" type="integer">52242974</label>
+			<label index="tx_pbsurvey_item.question_type.I.7" type="integer">43175661</label>
+			<label index="tx_pbsurvey_item.question_type.I.8" type="integer">83623729</label>
+			<label index="tx_pbsurvey_item.question_type.I.9" type="integer">73684626</label>
+			<label index="tx_pbsurvey_item.question_type.I.10" type="integer">212244532</label>
+			<label index="tx_pbsurvey_item.question_type.I.11" type="integer">197291047</label>
+			<label index="tx_pbsurvey_item.question_type.I.12" type="integer">46301156</label>
+			<label index="tx_pbsurvey_item.question_type.I.13" type="integer">48028729</label>
+			<label index="tx_pbsurvey_item.question_type.I.14" type="integer">35255852</label>
+			<label index="tx_pbsurvey_item.question_type.I.15" type="integer">257103504</label>
+			<label index="tx_pbsurvey_item.question_type.I.16" type="integer">140657717</label>
+			<label index="tx_pbsurvey_item.question_type.I.17" type="integer">248981960</label>
+			<label index="tx_pbsurvey_item.question_type.I.18" type="integer">200377695</label>
+			<label index="tx_pbsurvey_item.question_type.I.19" type="integer">241881524</label>
+			<label index="tx_pbsurvey_item.question_type.I.20" type="integer">67432771</label>
+			<label index="tx_pbsurvey_item.question_type.I.21" type="integer">250381949</label>
+			<label index="tx_pbsurvey_item.question_type.I.22" type="integer">260939646</label>
+			<label index="tx_pbsurvey_item.question_type" type="integer">175895632</label>
+			<label index="tx_pbsurvey_item.question" type="integer">177728086</label>
+			<label index="tx_pbsurvey_item.question_alias" type="integer">148542273</label>
+			<label index="tx_pbsurvey_item.question_subtext" type="integer">266731121</label>
+			<label index="tx_pbsurvey_item.page_title" type="integer">42353938</label>
+			<label index="tx_pbsurvey_item.page_introduction" type="integer">44895013</label>
+			<label index="tx_pbsurvey_item.options_required" type="integer">191176445</label>
+			<label index="tx_pbsurvey_item.options_random" type="integer">42092949</label>
+			<label index="tx_pbsurvey_item.options_alignment.I.0" type="integer">7135906</label>
+			<label index="tx_pbsurvey_item.options_alignment.I.1" type="integer">203120544</label>
+			<label index="tx_pbsurvey_item.options_alignment" type="integer">222512782</label>
+			<label index="tx_pbsurvey_item.options_minimum_responses" type="integer">192046728</label>
+			<label index="tx_pbsurvey_item.options_maximum_responses" type="integer">191902081</label>
+			<label index="tx_pbsurvey_item.options_row_heading_width" type="integer">229855198</label>
+			<label index="tx_pbsurvey_item.rows" type="integer">150197186</label>
+			<label index="tx_pbsurvey_item.answers" type="integer">90978500</label>
+			<label index="tx_pbsurvey_item.answers_wiz" type="integer">113564850</label>
+			<label index="tx_pbsurvey_item.answers_allow_additional" type="integer">193044762</label>
+			<label index="tx_pbsurvey_item.answers_text_additional" type="integer">172768038</label>
+			<label index="tx_pbsurvey_item.answers_text_additional.default" type="integer">36872357</label>
+			<label index="tx_pbsurvey_item.answers_type_additional.I.0" type="integer">216714131</label>
+			<label index="tx_pbsurvey_item.answers_type_additional.I.1" type="integer">190663973</label>
+			<label index="tx_pbsurvey_item.answers_type_additional" type="integer">23418776</label>
+			<label index="tx_pbsurvey_item.display_type" type="integer">123132525</label>
+			<label index="tx_pbsurvey_item.display_type.I.0" type="integer">122260548</label>
+			<label index="tx_pbsurvey_item.display_type.I.1" type="integer">213312927</label>
+			<label index="tx_pbsurvey_item.display_type.I.2" type="integer">77460328</label>
+			<label index="tx_pbsurvey_item.default_value_tf" type="integer">52224973</label>
+			<label index="tx_pbsurvey_item.default_value_tf.I.0" type="integer">56694286</label>
+			<label index="tx_pbsurvey_item.default_value_tf.I.1" type="integer">260209908</label>
+			<label index="tx_pbsurvey_item.default_value_tf.I.2" type="integer">260251826</label>
+			<label index="tx_pbsurvey_item.default_value_yn" type="integer">52224973</label>
+			<label index="tx_pbsurvey_item.default_value_yn.I.0" type="integer">56694286</label>
+			<label index="tx_pbsurvey_item.default_value_yn.I.1" type="integer">154974727</label>
+			<label index="tx_pbsurvey_item.default_value_yn.I.2" type="integer">196073266</label>
+			<label index="tx_pbsurvey_item.default_value_txt" type="integer">52224973</label>
+			<label index="tx_pbsurvey_item.default_date" type="integer">52224973</label>
+			<label index="tx_pbsurvey_item.default_value_num" type="integer">52224973</label>
+			<label index="tx_pbsurvey_item.beginning_number" type="integer">201853827</label>
+			<label index="tx_pbsurvey_item.ending_number" type="integer">39856857</label>
+			<label index="tx_pbsurvey_item.total_number" type="integer">153287722</label>
+			<label index="tx_pbsurvey_item.minimum_date" type="integer">13827915</label>
+			<label index="tx_pbsurvey_item.maximum_date" type="integer">121584388</label>
+			<label index="tx_pbsurvey_item.minimum_value" type="integer">13827915</label>
+			<label index="tx_pbsurvey_item.maximum_value" type="integer">121584388</label>
+			<label index="tx_pbsurvey_item.maximum_length" type="integer">156175968</label>
+			<label index="tx_pbsurvey_item.image" type="integer">199571973</label>
+			<label index="tx_pbsurvey_item.image_height" type="integer">103399135</label>
+			<label index="tx_pbsurvey_item.image_width" type="integer">24350122</label>
+			<label index="tx_pbsurvey_item.image_alignment" type="integer">119269544</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.0" type="integer">128029197</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.1" type="integer">155571682</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.2" type="integer">82966017</label>
+			<label index="tx_pbsurvey_item.image_alignment.I.3" type="integer">153815495</label>
+			<label index="tx_pbsurvey_item.sql" type="integer">39720429</label>
+			<label index="tx_pbsurvey_item.email" type="integer">139440467</label>
+			<label index="tx_pbsurvey_item.heading" type="integer">149322404</label>
+			<label index="tx_pbsurvey_item.html" type="integer">86423722</label>
+			<label index="tx_pbsurvey_item.message" type="integer">65762617</label>
+			<label index="tx_pbsurvey_item.conditions" type="integer">32764280</label>
+			<label index="tx_pbsurvey_item.conditions_wiz" type="integer">116020110</label>
+			<label index="tx_pbsurvey_results" type="integer">255148473</label>
+			<label index="tx_pbsurvey_results.survey" type="integer">167616412</label>
+			<label index="tx_pbsurvey_results.user" type="integer">150585321</label>
+			<label index="tt_content.list_type_pi1" type="integer">195136475</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="no" type="array">
+		</languageKey>
+	</orig_text>
+</T3locallangExt>

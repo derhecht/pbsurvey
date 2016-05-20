@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallangExt>
+	<data type="array">
+		<languageKey index="it" type="array">
+			<label index="no_items">Nessuna domanda da visualizzare disponibile.</label>
+			<label index="access_single_no_update">Hai già partecipato a questo sondaggio. È possibile partecipare al sondaggio una sola volta.</label>
+			<label index="access_single_update_expired">Non è più possibile modificare le tue risposte. Il tempo per rispondere è terminato.</label>
+			<label index="access_user_maximum">Il numero massimo di risposte previsto per questo sondaggio è stato raggiunto.</label>
+			<label index="access_survey_maximum">Questo sondaggio è chiuso. Non è più possibile partecipare a questo sondaggio.</label>
+			<label index="value_none">nessuno</label>
+			<label index="value_true">vero</label>
+			<label index="value_false">falso</label>
+			<label index="value_yes">sì</label>
+			<label index="value_no">no</label>
+			<label index="js_required_select">Per favore, seleziona un valore alla domanda n. %q.</label>
+			<label index="js_required_enter">Per favore, immetti un valore alla domanda n. %q.</label>
+			<label index="js_required_enter_multiple">Per favore, immetti un valore per ciascun elemento alla domanda n. %q.</label>
+			<label index="js_required_matrix_check">Per favore, seleziona almeno un elemento alla domanda n. %q.</label>
+			<label index="js_required_matrix_value">Per favore, immetti un valore per almeno un elemento alla domanda n. %q.</label>
+			<label index="js_required_matrix_radio">Per favore, seleziona un elemento per ogni riga alla domanda n. %q.</label>
+			<label index="js_required_date">Per favore, immetti una data alla domanda n. %q.</label>
+			<label index="js_required_numeric">Per favore, immetti un valore numerico alla domanda n. %q.</label>
+			<label index="js_numeric">Per favore, verifica che tutti i valori immessi alla domanda n. %q siano numerici.</label>
+			<label index="js_sum">La somma delle risposte fornite alla domanda n. %q deve essere %t. La somma attuale è %v.</label>
+			<label index="js_minimum_date">Per favore, inserisci una data successiva o uguale al %d alla domanda n. %q.</label>
+			<label index="js_maximum_date">Per favore, inserisci una data precedente o uguale al %d alla domanda n. %q.</label>
+			<label index="js_date_notvalid">Per favore, inserisci una data in formato gg/mm/aaaa oppure gg-mm-aaaa alla domanda n. %q.</label>
+			<label index="js_month_notvalid">Alla domanda n. %q, il valore corrispondente al mese deve essere compreso tra 1 e 12.</label>
+			<label index="js_day_notvalid">Alla domanda n. %q, il valore corrispondente al giorno deve essere compreso tra 1 e 31.</label>
+			<label index="js_month_not31">Alla domanda n. %q, il mese %m non ha 31 giorni!</label>
+			<label index="js_februari_notvalid">Alla domanda n. %q, il mese di febbraio %y non ha %d giorni!</label>
+			<label index="js_minimum_responses">Per favore, seleziona almeno %v valori alla domanda n. %q.</label>
+			<label index="js_maximum_responses">Per favore, non selezionare più di %v valori alla domanda n. %q.</label>
+			<label index="js_minimum_responses_enter">Per favore, immetti almeno %v valori alla domanda n. %q.</label>
+			<label index="js_maximum_responses_enter">Per favore, non immettere più di %v valori alla domanda n. %q.</label>
+			<label index="js_minimum_value">Per favore, immetti un valore maggiore o uguale a %v alla domanda n. %q.</label>
+			<label index="js_maximum_value">Per favore, immetti un valore minore o uguale a %v alla domanda n. %q.</label>
+			<label index="js_email">Per favore, alla domanda n. %q indica un indirizzo di e-mail valido.</label>
+			<label index="js_ranking">Alla domanda n. %q, la sequenza degli elementi deve essere da 1 a %v.</label>
+			<label index="js_ranking_double">Alla domanda n. %q, ciascun valore in sequenza può essere indicato una sola volta.</label>
+			<label index="comment_responses_both">Per favore, seleziona almeno ###OPTIONS_MINIMUM_RESPONSES### e non più di ###OPTIONS_MAXIMUM_RESPONSES### risposte.</label>
+			<label index="comment_responses_minimum">Per favore, seleziona almeno ###OPTIONS_MINIMUM_RESPONSES### risposte.&lt;/</label>
+			<label index="comment_responses_maximum">Per favore, non selezionare più di ###OPTIONS_MAXIMUM_RESPONSES### risposte.</label>
+			<label index="comment_sum">La somma dei valori inseriti deve essere ###TOTAL_NUMBER###.</label>
+			<label index="comment_date_both">Il valore deve essere compreso tra il ###MINIMUM_DATE### e il ###MAXIMUM_DATE###.</label>
+			<label index="comment_date_minimum">Il valore deve essere maggiore o uguale a ###MINIMUM_DATE###.</label>
+			<label index="comment_date_maximum">Il valore deve essere minore o uguale a ###MAXIMUM_DATE###.</label>
+			<label index="comment_number_both">Il valore deve essere compreso tra ###MINIMUM_VALUE### e ###MAXIMUM_VALUE###.</label>
+			<label index="comment_number_minimum">Il valore deve essere maggiore o uguale a ###MINIMUM_VALUE###.</label>
+			<label index="comment_number_maximum">Il valore deve essere minore o uguale a ###MAXIMUM_VALUE###.</label>
+			<label index="comment_responses_enter_both">Per favore, inserisci almeno ###OPTIONS_MINIMUM_RESPONSES### e non più di ###OPTIONS_MAXIMUM_RESPONSES### risposte.</label>
+			<label index="comment_responses_enter_minimum">Inserisci almeno ###OPTIONS_MINIMUM_RESPONSES### risposte.</label>
+			<label index="comment_responses_enter_maximum">Non inserire più di ###OPTIONS_MAXIMUM_RESPONSES### risposte.</label>
+			<label index="comment_ranking">Per esprimere un giudizio sull’elemento seguente immetti un valore numerico partendo da 1.</label>
+			<label index="submit">Invia</label>
+			<label index="back">Indietro</label>
+			<label index="cancel">Annulla</label>
+			<label index="username">Inserisci il tuo nome utente:</label>
+			<label index="continue">Avanti</label>
+			<label index="close">Chiudi finestra</label>
+			<label index="page">Pagina</label>
+			<label index="page_xy">Pagina %x di %y</label>
+			<label index="percent">percento</label>
+			<label index="failed_saving_data">Durante il salvataggio dei dati si è verificato un errore!</label>
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="it" type="array">
+			<label index="no_items" type="integer">203596997</label>
+			<label index="access_single_no_update" type="integer">16580367</label>
+			<label index="access_single_update_expired" type="integer">212000950</label>
+			<label index="access_user_maximum" type="integer">26755418</label>
+			<label index="access_survey_maximum" type="integer">264296681</label>
+			<label index="value_none" type="integer">166300802</label>
+			<label index="value_true" type="integer">260209908</label>
+			<label index="value_false" type="integer">260251826</label>
+			<label index="value_yes" type="integer">154974727</label>
+			<label index="value_no" type="integer">196073266</label>
+			<label index="js_required_select" type="integer">199719066</label>
+			<label index="js_required_enter" type="integer">247135623</label>
+			<label index="js_required_enter_multiple" type="integer">208524952</label>
+			<label index="js_required_matrix_check" type="integer">191641847</label>
+			<label index="js_required_matrix_value" type="integer">253654596</label>
+			<label index="js_required_matrix_radio" type="integer">172401077</label>
+			<label index="js_required_date" type="integer">153215521</label>
+			<label index="js_required_numeric" type="integer">136193738</label>
+			<label index="js_numeric" type="integer">268187348</label>
+			<label index="js_sum" type="integer">238098527</label>
+			<label index="js_minimum_date" type="integer">190669410</label>
+			<label index="js_maximum_date" type="integer">126072054</label>
+			<label index="js_date_notvalid" type="integer">174368081</label>
+			<label index="js_month_notvalid" type="integer">120327672</label>
+			<label index="js_day_notvalid" type="integer">32361549</label>
+			<label index="js_month_not31" type="integer">155137732</label>
+			<label index="js_februari_notvalid" type="integer">10016674</label>
+			<label index="js_minimum_responses" type="integer">188531518</label>
+			<label index="js_maximum_responses" type="integer">268333063</label>
+			<label index="js_minimum_responses_enter" type="integer">191397191</label>
+			<label index="js_maximum_responses_enter" type="integer">94382603</label>
+			<label index="js_minimum_value" type="integer">129657279</label>
+			<label index="js_maximum_value" type="integer">196854896</label>
+			<label index="js_email" type="integer">194273213</label>
+			<label index="js_ranking" type="integer">257621170</label>
+			<label index="js_ranking_double" type="integer">154447963</label>
+			<label index="comment_responses_both" type="integer">265335293</label>
+			<label index="comment_responses_minimum" type="integer">95357623</label>
+			<label index="comment_responses_maximum" type="integer">145433433</label>
+			<label index="comment_sum" type="integer">224815504</label>
+			<label index="comment_date_both" type="integer">233881771</label>
+			<label index="comment_date_minimum" type="integer">4267006</label>
+			<label index="comment_date_maximum" type="integer">80384088</label>
+			<label index="comment_number_both" type="integer">195238927</label>
+			<label index="comment_number_minimum" type="integer">103267436</label>
+			<label index="comment_number_maximum" type="integer">57536240</label>
+			<label index="comment_responses_enter_both" type="integer">82665237</label>
+			<label index="comment_responses_enter_minimum" type="integer">144580239</label>
+			<label index="comment_responses_enter_maximum" type="integer">179315526</label>
+			<label index="comment_ranking" type="integer">52726100</label>
+			<label index="submit" type="integer">172833558</label>
+			<label index="back" type="integer">5603241</label>
+			<label index="cancel" type="integer">245659783</label>
+			<label index="username" type="integer">258150986</label>
+			<label index="continue" type="integer">168557454</label>
+			<label index="close" type="integer">160116745</label>
+			<label index="page" type="integer">26464201</label>
+			<label index="page_xy" type="integer">37567395</label>
+			<label index="percent" type="integer">55898183</label>
+			<label index="failed_saving_data" type="integer">207550776</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="it" type="array">
+			<label index="no_items">There are no questions available to show.</label>
+			<label index="access_single_no_update">You have already responded to this survey. You can only do this once.</label>
+			<label index="access_single_update_expired">You cannot update your response anymore. The days for update have expired.</label>
+			<label index="access_user_maximum">You have reached the maximum number of responses to this survey</label>
+			<label index="access_survey_maximum">This survey is closed. It is not possible to respond to this survey anymore</label>
+			<label index="value_none">-- None --</label>
+			<label index="value_true">True</label>
+			<label index="value_false">False</label>
+			<label index="value_yes">Yes</label>
+			<label index="value_no">No</label>
+			<label index="js_required_select">Please select a value for question number %q</label>
+			<label index="js_required_enter">Please enter a value for question number %q</label>
+			<label index="js_required_enter_multiple">Please enter values for all items for question number %q</label>
+			<label index="js_required_matrix_check">Please select at least one item for question number %q</label>
+			<label index="js_required_matrix_value">Please enter a value for at least one item for question number %q</label>
+			<label index="js_required_matrix_radio">Please select one item per row for question number %q</label>
+			<label index="js_required_date">Please enter a date for question number %q</label>
+			<label index="js_required_numeric">Please enter a numeric value for question number %q</label>
+			<label index="js_numeric">Please make sure that all values entered for question number %q are numeric.</label>
+			<label index="js_sum">The sum of all answers for question number %q must add up to %t.  The current sum is %v</label>
+			<label index="js_minimum_date">Please enter a date that is greater than or equal to %d for question number %q</label>
+			<label index="js_maximum_date">Please enter a date that is less than or equal to %d for question number %q</label>
+			<label index="js_date_notvalid">Please enter date as either dd/mm/yyyy or dd-mm-yyyy  for question number %q</label>
+			<label index="js_month_notvalid">Month must be between 1 and 12 for question number %q</label>
+			<label index="js_day_notvalid">Day must be between 1 and 31 for question number %q</label>
+			<label index="js_month_not31">Month %m does not have 31 days for question number %q!</label>
+			<label index="js_februari_notvalid">February %y does not have %d days for question number %q!</label>
+			<label index="js_minimum_responses">Please select at least %v values for question number %q</label>
+			<label index="js_maximum_responses">Please select no more than %v values for question number %q</label>
+			<label index="js_minimum_responses_enter">Please enter at least %v values for question number %q</label>
+			<label index="js_maximum_responses_enter">Please enter no more than %v values for question number %q</label>
+			<label index="js_minimum_value">Please enter a value that is greater than or equal to %v for question number %q</label>
+			<label index="js_maximum_value">Please enter a value that is less than or equal to %v for question number %q</label>
+			<label index="js_email">Please enter a valid email address for question number %q</label>
+			<label index="js_ranking">Item rankings must be between 1 and %v for question %q</label>
+			<label index="js_ranking_double">Each ranking value can be entered only once for question %q</label>
+			<label index="comment_responses_both">Select at least ###OPTIONS_MINIMUM_RESPONSES### responses and no more than ###OPTIONS_MAXIMUM_RESPONSES### responses.</label>
+			<label index="comment_responses_minimum">Select at least ###OPTIONS_MINIMUM_RESPONSES### responses.</label>
+			<label index="comment_responses_maximum">Select no more than ###OPTIONS_MAXIMUM_RESPONSES### responses.</label>
+			<label index="comment_sum">The sum of the numbers entered must equal ###TOTAL_NUMBER###.</label>
+			<label index="comment_date_both">The value must be between ###MINIMUM_DATE### and ###MAXIMUM_DATE###, inclusive.</label>
+			<label index="comment_date_minimum">The value must be greater than or equal to ###MINIMUM_DATE###.</label>
+			<label index="comment_date_maximum">The value must be less than or equal to ###MAXIMUM_DATE###.</label>
+			<label index="comment_number_both">The value must be between ###MINIMUM_VALUE### and ###MAXIMUM_VALUE###, inclusive.</label>
+			<label index="comment_number_minimum">The value must be greater than or equal to ###MINIMUM_VALUE###.</label>
+			<label index="comment_number_maximum">The value must be less than or equal to ###MAXIMUM_VALUE###.</label>
+			<label index="comment_responses_enter_both">Enter at least ###OPTIONS_MINIMUM_RESPONSES### responses and no more than ###OPTIONS_MAXIMUM_RESPONSES### responses.</label>
+			<label index="comment_responses_enter_minimum">Enter at least ###OPTIONS_MINIMUM_RESPONSES### responses.</label>
+			<label index="comment_responses_enter_maximum">Enter no more than ###OPTIONS_MAXIMUM_RESPONSES### responses.</label>
+			<label index="comment_ranking">Rank the items below, using numeric values starting with 1.</label>
+			<label index="submit">Submit</label>
+			<label index="back">Back</label>
+			<label index="cancel">Cancel</label>
+			<label index="username">Please enter user name:</label>
+			<label index="continue">Continue</label>
+			<label index="close">Close window</label>
+			<label index="page">Page</label>
+			<label index="page_xy">Page %x of %y</label>
+			<label index="percent">percent</label>
+			<label index="failed_saving_data">An error has occured during saving data. We are sorry.</label>
+		</languageKey>
+	</orig_text>
+</T3locallangExt>

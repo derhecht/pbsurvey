@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallangExt>
+	<data type="array">
+		<languageKey index="no" type="array">
+			<label index="pi1_title_pbsurvey">Spørreundersøkelse</label>
+			<label index="pi1_plus_wiz_description_pbsurvey">Samle informasjon fra nettbruker gjennom spørreundersøkelse.</label>
+			<label index="pi_flexform.sheet_general">Generelle</label>
+			<label index="pi_flexform.template_file">Malfil</label>
+			<label index="pi_flexform.sheet_access">Tilgang</label>
+			<label index="pi_flexform.access_level">Respondenten sitt tilgangsnivå</label>
+			<label index="pi_flexform.access_level0">Mange svar</label>
+			<label index="pi_flexform.access_level1">Et svar</label>
+			<label index="pi_flexform.access_level2">Et svar (ikke oppdaterbart)</label>
+			<label index="pi_flexform.sheet_completion">Ferdig</label>
+			<label index="pi_flexform.completion_action">Handling når ferdig</label>
+			<label index="pi_flexform.action0">Vis melding</label>
+			<label index="pi_flexform.action1">Vis resultat med en gang</label>
+			<label index="pi_flexform.action2">Gå til annen side</label>
+			<label index="pi_flexform.completion_message">Sluttmelding</label>
+			<label index="pi_flexform.completion_url">Sluttside</label>
+			<label index="pi_flexform.close_button">Lukk knapp</label>
+			<label index="pi_flexform.continue_button">Gå videre knapp</label>
+			<label index="pi_flexform.view_reports_button">Vis rapport knapp</label>
+			<label index="pi_flexform.sheet_navigation">Navigasjon</label>
+			<label index="pi_flexform.navigation_back">Tilbake knapp</label>
+			<label index="pi_flexform.back0">Ikke vis</label>
+			<label index="pi_flexform.back1">Vis</label>
+			<label index="pi_flexform.navigation_cancel">Avbryt knapp</label>
+			<label index="pi_flexform.cancel0">Ikke vis</label>
+			<label index="pi_flexform.cancel1">Lukk nettleser</label>
+			<label index="pi_flexform.cancel2">Gå til enden av undersøkelse</label>
+			<label index="pi_flexform.cancel3">Gå til tilpasset side (entered below)</label>
+			<label index="pi_flexform.cancel_url">Avbryt side</label>
+			<label index="pi_flexform.sheet_numbering">Nummering</label>
+			<label index="pi_flexform.page_numbering">Sidenummerering</label>
+			<label index="pi_flexform.page_numbering0">Ikke vis sidenummer</label>
+			<label index="pi_flexform.page_numbering1">Vis fremskritt i fremskrittslinje</label>
+			<label index="pi_flexform.page_numbering2">Vis fremskritt i 'side X av Y' format</label>
+			<label index="pi_flexform.page_numbering3">Vis side nummer på hver side</label>
+			<label index="pi_flexform.question_numbering">Nummering av spørsmål</label>
+			<label index="pi_flexform.question_numbering0">Vis ikke nummer på spørsmål</label>
+			<label index="pi_flexform.question_numbering1">Nummerering av spørsmål for hele undersøkelsen</label>
+			<label index="pi_flexform.question_numbering2">Nummerering av spørsmål pr. side</label>
+			<label index="pi_flexform.other">Annet</label>
+			<label index="pi_flexform.maximum_responses">Maksimalt antall respondenter</label>
+			<label index="pi_flexform.responses_per_user">Svar pr. bruker</label>
+			<label index="pi_flexform.days_for_update">Dager før oppdatering</label>
+			<label index="pi_flexform.access_level3">Manual Response Entry</label>
+			<label index="pi_flexform.action3">Lukk nettleser</label>
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="no" type="array">
+			<label index="pi1_title_pbsurvey" type="integer">195136475</label>
+			<label index="pi1_plus_wiz_description_pbsurvey" type="integer">129097042</label>
+			<label index="pi_flexform.sheet_general" type="integer">14366585</label>
+			<label index="pi_flexform.template_file" type="integer">169140391</label>
+			<label index="pi_flexform.sheet_access" type="integer">200750040</label>
+			<label index="pi_flexform.access_level" type="integer">85176918</label>
+			<label index="pi_flexform.access_level0" type="integer">258858733</label>
+			<label index="pi_flexform.access_level1" type="integer">159297861</label>
+			<label index="pi_flexform.access_level2" type="integer">123440847</label>
+			<label index="pi_flexform.sheet_completion" type="integer">50242971</label>
+			<label index="pi_flexform.completion_action" type="integer">65302634</label>
+			<label index="pi_flexform.action0" type="integer">145972349</label>
+			<label index="pi_flexform.action1" type="integer">200162756</label>
+			<label index="pi_flexform.action2" type="integer">29776300</label>
+			<label index="pi_flexform.completion_message" type="integer">213902031</label>
+			<label index="pi_flexform.completion_url" type="integer">114661263</label>
+			<label index="pi_flexform.close_button" type="integer">52300346</label>
+			<label index="pi_flexform.continue_button" type="integer">198774495</label>
+			<label index="pi_flexform.view_reports_button" type="integer">218713071</label>
+			<label index="pi_flexform.sheet_navigation" type="integer">138824031</label>
+			<label index="pi_flexform.navigation_back" type="integer">224151381</label>
+			<label index="pi_flexform.back0" type="integer">224878411</label>
+			<label index="pi_flexform.back1" type="integer">194611106</label>
+			<label index="pi_flexform.navigation_cancel" type="integer">122335157</label>
+			<label index="pi_flexform.cancel0" type="integer">224878411</label>
+			<label index="pi_flexform.cancel1" type="integer">185041031</label>
+			<label index="pi_flexform.cancel2" type="integer">135156082</label>
+			<label index="pi_flexform.cancel3" type="integer">264973277</label>
+			<label index="pi_flexform.cancel_url" type="integer">88976893</label>
+			<label index="pi_flexform.sheet_numbering" type="integer">61043561</label>
+			<label index="pi_flexform.page_numbering" type="integer">178885911</label>
+			<label index="pi_flexform.page_numbering0" type="integer">264273018</label>
+			<label index="pi_flexform.page_numbering1" type="integer">96930089</label>
+			<label index="pi_flexform.page_numbering2" type="integer">233932490</label>
+			<label index="pi_flexform.page_numbering3" type="integer">81684616</label>
+			<label index="pi_flexform.question_numbering" type="integer">113349521</label>
+			<label index="pi_flexform.question_numbering0" type="integer">103236608</label>
+			<label index="pi_flexform.question_numbering1" type="integer">167307725</label>
+			<label index="pi_flexform.question_numbering2" type="integer">129051804</label>
+			<label index="pi_flexform.other" type="integer">103881441</label>
+			<label index="pi_flexform.maximum_responses" type="integer">218747109</label>
+			<label index="pi_flexform.responses_per_user" type="integer">163120207</label>
+			<label index="pi_flexform.days_for_update" type="integer">122631216</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="no" type="array">
+		</languageKey>
+	</orig_text>
+</T3locallangExt>

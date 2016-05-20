@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallangExt>
+	<data type="array">
+		<languageKey index="fr" type="array">
+			<label index="mlang_tabs_tab">Questionnaire</label>
+			<label index="mlang_labels_tabdescr">Visualiser les statistiques du questionnaire et exporter les résultats au format csv.</label>
+			<label index="mlang_labels_tablabel">Statistiques du questionnaire</label>
+			<label index="no_results">Il n'y a pas de résultat de questionnaire sur cette page.</label>
+			<label index="error">Erreur</label>
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="fr" type="array">
+			<label index="mlang_tabs_tab" type="integer">195136475</label>
+			<label index="mlang_labels_tabdescr" type="integer">18218660</label>
+			<label index="mlang_labels_tablabel" type="integer">43726921</label>
+			<label index="no_results" type="integer">167311142</label>
+			<label index="error" type="integer">151171285</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="fr" type="array">
+		</languageKey>
+	</orig_text>
+</T3locallangExt>

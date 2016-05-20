@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallangExt>
+	<data type="array">
+		<languageKey index="hk" type="array">
+			<label index="no_items">沒有可顯示的問題.</label>
+			<label index="access_single_no_update">你已經回應了這個調查. 你只可作這調查一次.</label>
+			<label index="access_single_update_expired">你不再可以更新你的回應. 可更新的日期已經過去.</label>
+			<label index="access_user_maximum">你對這個調查的回應已經達到了最高的數量</label>
+			<label index="access_survey_maximum">調查已經結束. 不再可能回應這個調查.</label>
+			<label index="value_none">-- None --</label>
+			<label index="value_true">真</label>
+			<label index="value_false">假</label>
+			<label index="value_yes">是</label>
+			<label index="value_no">否</label>
+			<label index="remaining_points">餘下的點</label>
+			<label index="js_errors_occurred">發生以下的錯誤:</label>
+			<label index="js_required_select">請為問題 %q 選擇一個數值</label>
+			<label index="js_required_enter">請為問題 %q 輸入一個數值</label>
+			<label index="js_required_enter_multiple">請為問題 %q 所有項目輸入一個數值</label>
+			<label index="js_required_matrix_check">請為問題 %q 選擇最少一個項目</label>
+			<label index="js_required_matrix_value">請為問題 %q 中最少一個項目輸入一個數值</label>
+			<label index="js_required_matrix_radio">請為問題 %q 每行選擇一個項目</label>
+			<label index="js_required_date">請為問題 %q 中輸入一個日期</label>
+			<label index="js_required_numeric">請為問題 %q 輸入一個數字值</label>
+			<label index="js_numeric">請肯定為問題 %q 所輸入的值皆為數字</label>
+			<label index="js_sum">問題 %q 的答案的總和必須累計至 %t. 現在的總和是 %v.</label>
+			<label index="js_minimum_date">請為問題 %q 輸入一個大於或相等於 %d 的日期</label>
+			<label index="js_maximum_date">凊為問題 %q 輸入一個少於或相等於 %d 的日期</label>
+			<label index="js_date_notvalid">請為問題 %q 輸入一個 dd/mm/yyyy 或 dd-mm-yyyy 格式的日期</label>
+			<label index="js_month_notvalid">問題 %q 的月份必須介乎1-12之間</label>
+			<label index="js_day_notvalid">問題 %q 的日必須介乎1-31之間 !</label>
+			<label index="js_month_not31">問題 %q 的月份並沒有31日!</label>
+			<label index="js_februari_notvalid">問題%q 中 %y 2月並沒有 %d 日!</label>
+			<label index="js_minimum_responses">請為問題 %q 選擇最少 %v 個值</label>
+			<label index="js_maximum_responses">請為問題 %q 選擇不多於 %v 個值</label>
+			<label index="js_minimum_responses_enter">請為問題 %q 輸入最少 %v 個值</label>
+			<label index="js_maximum_responses_enter">請為問題 %q 輸入最少%v 個值</label>
+			<label index="js_minimum_value">請為問題 %q 輸入一個大於或相等於 %v 的數值</label>
+			<label index="js_maximum_value">請為問題 %q 輸入一個少於或相等於 %v 的數值</label>
+			<label index="js_email">請為問題 %q 輸入一個有效的電郵地址</label>
+			<label index="js_ranking">問題 %q 中項目的排名必須介乎1-%v 之間</label>
+			<label index="js_ranking_double">問題 %q 中每個排名值只能輸入一次</label>
+			<label index="comment_responses_both">選擇最少###OPTIONS_MINIMUM_RESPONSES### 和不多於 ###OPTIONS_MAXIMUM_RESPONSES### 個回應.</label>
+			<label index="comment_responses_minimum">選擇最少 ###OPTIONS_MINIMUM_RESPONSES### 個回應.</label>
+			<label index="comment_responses_maximum">選擇不多於 ###OPTIONS_MAXIMUM_RESPONSES### 個回應.</label>
+			<label index="comment_sum">輸入的數字的總和必須相等於 ###TOTAL_NUMBER###.</label>
+			<label index="comment_date_both">數值必須介乎 ###MINIMUM_DATE### 和 ###MAXIMUM_DATE### 之間, 包括首尾.</label>
+			<label index="comment_date_minimum">數值必須大於或相等於 ###MINIMUM_DATE###.</label>
+			<label index="comment_date_maximum">數值必須少於或相等於 ###MAXIMUM_DATE###.</label>
+			<label index="comment_number_both">數值必須介乎 ###MINIMUM_VALUE### 和 ###MAXIMUM_VALUE### 之間, 包括首尾.</label>
+			<label index="comment_number_minimum">數值必須大於或相等於 ###MINIMUM_VALUE###.</label>
+			<label index="comment_number_maximum">數值必須少於或相等於 ###MAXIMUM_VALUE###.</label>
+			<label index="comment_responses_enter_both">輸入最少 ###OPTIONS_MINIMUM_RESPONSES### 並不多於 ###OPTIONS_MAXIMUM_RESPONSES### 個回應.</label>
+			<label index="comment_responses_enter_minimum">輸入最少 ###OPTIONS_MINIMUM_RESPONSES### 個回應.</label>
+			<label index="comment_responses_enter_maximum">輸入不多於 ###OPTIONS_MAXIMUM_RESPONSES### 個回應.</label>
+			<label index="comment_ranking">為下列項目排列次序, 用以1開始的數字.</label>
+			<label index="submit">遞交</label>
+			<label index="back">返回</label>
+			<label index="cancel">取消</label>
+			<label index="username">請輸入用戶名稱</label>
+			<label index="continue">繼續</label>
+			<label index="close">關閉視窗</label>
+			<label index="page">頁</label>
+			<label index="page_xy">頁 %x 之 %y 頁</label>
+			<label index="percent">百分比</label>
+			<label index="failed_saving_data">在儲存資料時發生錯誤. 我們很抱歉</label>
+			<label index="completion_message">多謝填寫調查問卷</label>
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="hk" type="array">
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="hk" type="array">
+		</languageKey>
+	</orig_text>
+</T3locallangExt>

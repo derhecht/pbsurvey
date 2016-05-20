@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallangExt>
+	<data type="array">
+		<languageKey index="nl" type="array">
+			<label index="mlang_tabs_tab">Enquete</label>
+			<label index="mlang_labels_tabdescr">Deze module geeft u de mogelijkheid om enquetestatistieken te bekijken of te eporteren als een CSV bestand voor verdere analyse in statistische software als SPSS.</label>
+			<label index="mlang_labels_tablabel">Enquetetools, zoals exporteren van resultaten, statistieken etc.</label>
+			<label index="no_results">Er bevinden zich geen enqueteresultaten op deze pagina.</label>
+			<label index="error">FOUT:</label>
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="nl" type="array">
+			<label index="mlang_tabs_tab" type="integer">195136475</label>
+			<label index="mlang_labels_tabdescr" type="integer">18218660</label>
+			<label index="mlang_labels_tablabel" type="integer">43726921</label>
+			<label index="no_results" type="integer">167311142</label>
+			<label index="error" type="integer">151171285</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="nl" type="array">
+		</languageKey>
+	</orig_text>
+</T3locallangExt>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallangExt>
+	<data type="array">
+		<languageKey index="de" type="array">
+			<label index="title">Assistent Beispiel Titel...</label>
+			<label index="table_title">Antwort Assistent</label>
+			<label index="table_noData">Keine Daten</label>
+			<label index="table_up">nach oben</label>
+			<label index="table_bottom">an das Ende verschieben</label>
+			<label index="table_removeRow">Zeile löschen</label>
+			<label index="table_down">nach unten</label>
+			<label index="table_top">an oberste Stelle verschieben</label>
+			<label index="table_addRow">Zeile hinzufügen</label>
+			<label index="table_answer">Antwort eingeben</label>
+			<label index="table_default">Standart</label>
+			<label index="table_points">Punkte</label>
+			<label index="forms_refresh">Neu laden ohne zu speichern</label>
+			<label index="answer_group_0">Antworten Gruppe auswählen (optional)</label>
+			<label index="answer_group_1">zustimmen - nicht zustimmen</label>
+			<label index="answer_group_1.1">totale zustimmung</label>
+			<label index="answer_group_1.2">zustimmung</label>
+			<label index="answer_group_1.3">neutral</label>
+			<label index="answer_group_1.4">keine zustimmng</label>
+			<label index="answer_group_1.5">absolut keine zustimmung</label>
+			<label index="answer_group_2">besser - schlechter</label>
+			<label index="answer_group_2.1">viel besser</label>
+			<label index="answer_group_2.2">besser</label>
+			<label index="answer_group_2.3">neutral</label>
+			<label index="answer_group_2.4">schlecht</label>
+			<label index="answer_group_2.5">viel schlechter</label>
+			<label index="answer_group_3">einfach - schwer</label>
+			<label index="answer_group_3.1">sehr einfach</label>
+			<label index="answer_group_3.2">einfach</label>
+			<label index="answer_group_3.3">neutral</label>
+			<label index="answer_group_3.4">schwer</label>
+			<label index="answer_group_3.5">sehr schwer</label>
+			<label index="answer_group_4">effektiv -ineffiktiv</label>
+			<label index="answer_group_4.1">sehr effektiv</label>
+			<label index="answer_group_4.2">effektiv</label>
+			<label index="answer_group_4.3">neutral</label>
+			<label index="answer_group_4.4">ineffiktiv</label>
+			<label index="answer_group_4.5">absolut ineffiktiv</label>
+			<label index="answer_group_5">ausgezeichnet - notdürftig</label>
+			<label index="answer_group_5.1">ausgezeichnet</label>
+			<label index="answer_group_5.2">gut</label>
+			<label index="answer_group_5.3">neutral</label>
+			<label index="answer_group_5.4">ausreichend</label>
+			<label index="answer_group_5.5">notdürftig</label>
+			<label index="answer_group_6">schnell - langsam</label>
+			<label index="answer_group_6.1">sehr schnell</label>
+			<label index="answer_group_6.2">schnell</label>
+			<label index="answer_group_6.3">neutral</label>
+			<label index="answer_group_6.4">langsam</label>
+			<label index="answer_group_6.5">sehr langsam</label>
+			<label index="answer_group_7">gut - schlecht</label>
+			<label index="answer_group_7.1">sehr gut</label>
+			<label index="answer_group_7.2">gut</label>
+			<label index="answer_group_7.3">neutral</label>
+			<label index="answer_group_7.4">schlecht</label>
+			<label index="answer_group_7.5">sehr schlecht</label>
+			<label index="answer_group_8">wichtig - unwichtig</label>
+			<label index="answer_group_8.1">sehr wichtig</label>
+			<label index="answer_group_8.2">wichtig</label>
+			<label index="answer_group_8.3">neutral</label>
+			<label index="answer_group_8.4">unwichtig</label>
+			<label index="answer_group_8.5">sehr unwichtig</label>
+			<label index="answer_group_9">glaubhaft - unglaubhaft</label>
+			<label index="answer_group_9.1">sehr glaubhaft</label>
+			<label index="answer_group_9.2">glaubhaft</label>
+			<label index="answer_group_9.3">neutral</label>
+			<label index="answer_group_9.4">unglaubhaft</label>
+			<label index="answer_group_9.5">sehr unglaubhaft</label>
+			<label index="answer_group_10">relevant - irrelevant</label>
+			<label index="answer_group_10.1">sehr relevant</label>
+			<label index="answer_group_10.2">relevant</label>
+			<label index="answer_group_10.3">neutral</label>
+			<label index="answer_group_10.4">irrelevant</label>
+			<label index="answer_group_10.5">sehr irrelevant</label>
+			<label index="answer_group_11">angemessen - unangemessen</label>
+			<label index="answer_group_11.1">sehr angemessen</label>
+			<label index="answer_group_11.2">angemessen</label>
+			<label index="answer_group_11.3">neutral</label>
+			<label index="answer_group_11.4">unangemessen</label>
+			<label index="answer_group_11.5">sehr unangemessen</label>
+			<label index="answer_group_12">zufrieden - unzufrieden</label>
+			<label index="answer_group_12.1">sehr zufrieden</label>
+			<label index="answer_group_12.2">zufrieden</label>
+			<label index="answer_group_12.3">neutral</label>
+			<label index="answer_group_12.4">unzufrieden</label>
+			<label index="answer_group_12.5">sehr unzufrieden</label>
+			<label index="answer_group_13">bedeutend - unbedeutend</label>
+			<label index="answer_group_13.1">sehr bedeutend</label>
+			<label index="answer_group_13.2">bedeutendt</label>
+			<label index="answer_group_13.3">neutral</label>
+			<label index="answer_group_13.4">unbedeutend</label>
+			<label index="answer_group_13.5">sehr unbedeutend</label>
+			<label index="answer_group_14">nützlich - unnützlich</label>
+			<label index="answer_group_14.1">sehr nützlich</label>
+			<label index="answer_group_14.2">nützlich</label>
+			<label index="answer_group_14.3">neutral</label>
+			<label index="answer_group_14.4">unnützlich</label>
+			<label index="answer_group_14.5">sehr unnützlich</label>
+			<label index="answer_group_15">sympathisch - unsympathisch</label>
+			<label index="answer_group_15.1">sehr sympathisch</label>
+			<label index="answer_group_15.2">sympathisch</label>
+			<label index="answer_group_15.3">neutral</label>
+			<label index="answer_group_15.4">unsympathisch</label>
+			<label index="answer_group_15.5">sehr unsympathisch</label>
+			<label index="answer_group_16">klein - groß</label>
+			<label index="answer_group_16.1">sehr klein</label>
+			<label index="answer_group_16.2">klein</label>
+			<label index="answer_group_16.3">neutral</label>
+			<label index="answer_group_16.4">groß</label>
+			<label index="answer_group_16.5">sehr groß</label>
+			<label index="answer_group_17">unterdurchschnittlich - überdurchschnittlich</label>
+			<label index="answer_group_17.1">unterdurchschnittlich</label>
+			<label index="answer_group_17.2">durchschnittlich</label>
+			<label index="answer_group_17.3">überdurchschnittlich</label>
+			<label index="conditions_title">Seitenbedingungens Assistent</label>
+			<label index="conditions_group">(OR) Gruppe</label>
+			<label index="conditions_not">Nicht</label>
+			<label index="conditions_field">Feld</label>
+			<label index="conditions_condition">Bedingung</label>
+			<label index="conditions_ruleRemove">Bedingung fürs enfernen</label>
+			<label index="conditions_and">und</label>
+			<label index="conditions_or">oder</label>
+			<label index="conditions_rules">Regeln</label>
+			<label index="conditions_newField">neues feld</label>
+			<label index="conditions_email">E-Mail</label>
+			<label index="conditions_passthru">passthru</label>
+			<label index="conditions_new">Neue Gruppe (OR)</label>
+			<label index="conditions_default">Standart</label>
+			<label index="conditions_catchall">Alles auswählen</label>
+			<label index="conditions_test">jetzt testen</label>
+			<label index="conditions_page">Seite</label>
+			<label index="conditions_equal">gleich zu</label>
+			<label index="conditions_notEqual">nicht gleich zu</label>
+			<label index="conditions_contains">enthält</label>
+			<label index="conditions_notContains">enthält nicht</label>
+			<label index="conditions_greater">ist größer als</label>
+			<label index="conditions_greaterEqual">ist größer oder gleich als</label>
+			<label index="conditions_less">ist kleiner als</label>
+			<label index="conditions_lessEqual">ist kleiner oder gleich als</label>
+			<label index="conditions_set">Antwort wird vorrausgesetzt</label>
+			<label index="conditions_notSet">Antword wird nicht vorrausgesetzt</label>
+			<label index="conditions_none">-- keine --</label>
+			<label index="conditions_true">Wahr</label>
+			<label index="conditions_false">Falsch</label>
+			<label index="conditions_yes">Ja</label>
+			<label index="conditions_no">Nein</label>
+			<label index="conditions_error">Es gibt keine Fragen vor dem Seitenumbruch!</label>
+		</languageKey>
+	</data>
+	<orig_hash type="array">
+		<languageKey index="de" type="array">
+			<label index="title" type="integer">13369934</label>
+			<label index="table_title" type="integer">60515542</label>
+			<label index="table_noData" type="integer">182926413</label>
+			<label index="table_up" type="integer">259501942</label>
+			<label index="table_bottom" type="integer">181578777</label>
+			<label index="table_removeRow" type="integer">253938706</label>
+			<label index="table_down" type="integer">232386759</label>
+			<label index="table_top" type="integer">120043265</label>
+			<label index="table_addRow" type="integer">27225638</label>
+			<label index="table_answer" type="integer">221706006</label>
+			<label index="table_default" type="integer">128029197</label>
+			<label index="table_points" type="integer">123590129</label>
+			<label index="forms_refresh" type="integer">17773422</label>
+			<label index="answer_group_0" type="integer">233834550</label>
+			<label index="answer_group_1" type="integer">248470362</label>
+			<label index="answer_group_1.1" type="integer">108742706</label>
+			<label index="answer_group_1.2" type="integer">32809930</label>
+			<label index="answer_group_1.3" type="integer">245085490</label>
+			<label index="answer_group_1.4" type="integer">15515791</label>
+			<label index="answer_group_1.5" type="integer">173244431</label>
+			<label index="answer_group_2" type="integer">261987705</label>
+			<label index="answer_group_2.1" type="integer">95096531</label>
+			<label index="answer_group_2.2" type="integer">18757032</label>
+			<label index="answer_group_2.3" type="integer">245085490</label>
+			<label index="answer_group_2.4" type="integer">186896769</label>
+			<label index="answer_group_2.5" type="integer">225669975</label>
+			<label index="answer_group_3" type="integer">179213598</label>
+			<label index="answer_group_3.1" type="integer">219856785</label>
+			<label index="answer_group_3.2" type="integer">133776274</label>
+			<label index="answer_group_3.3" type="integer">245085490</label>
+			<label index="answer_group_3.4" type="integer">69856916</label>
+			<label index="answer_group_3.5" type="integer">66061293</label>
+			<label index="answer_group_4" type="integer">33354819</label>
+			<label index="answer_group_4.1" type="integer">185408900</label>
+			<label index="answer_group_4.2" type="integer">158696041</label>
+			<label index="answer_group_4.3" type="integer">245085490</label>
+			<label index="answer_group_4.4" type="integer">19006763</label>
+			<label index="answer_group_4.5" type="integer">183601153</label>
+			<label index="answer_group_5" type="integer">112219437</label>
+			<label index="answer_group_5.1" type="integer">265039144</label>
+			<label index="answer_group_5.2" type="integer">13020528</label>
+			<label index="answer_group_5.3" type="integer">245085490</label>
+			<label index="answer_group_5.4" type="integer">259989711</label>
+			<label index="answer_group_5.5" type="integer">15289601</label>
+			<label index="answer_group_6" type="integer">61120308</label>
+			<label index="answer_group_6.1" type="integer">251805725</label>
+			<label index="answer_group_6.2" type="integer">236369335</label>
+			<label index="answer_group_6.3" type="integer">245085490</label>
+			<label index="answer_group_6.4" type="integer">251286423</label>
+			<label index="answer_group_6.5" type="integer">71297215</label>
+			<label index="answer_group_7" type="integer">248375312</label>
+			<label index="answer_group_7.1" type="integer">202265605</label>
+			<label index="answer_group_7.2" type="integer">13020528</label>
+			<label index="answer_group_7.3" type="integer">245085490</label>
+			<label index="answer_group_7.4" type="integer">134168181</label>
+			<label index="answer_group_7.5" type="integer">78265062</label>
+			<label index="answer_group_8" type="integer">165489641</label>
+			<label index="answer_group_8.1" type="integer">163748230</label>
+			<label index="answer_group_8.2" type="integer">11245645</label>
+			<label index="answer_group_8.3" type="integer">245085490</label>
+			<label index="answer_group_8.4" type="integer">27015672</label>
+			<label index="answer_group_8.5" type="integer">68946614</label>
+			<label index="answer_group_9" type="integer">163076964</label>
+			<label index="answer_group_9.1" type="integer">219829549</label>
+			<label index="answer_group_9.2" type="integer">130508324</label>
+			<label index="answer_group_9.3" type="integer">245085490</label>
+			<label index="answer_group_9.4" type="integer">59323466</label>
+			<label index="answer_group_9.5" type="integer">251565527</label>
+			<label index="answer_group_10" type="integer">102083086</label>
+			<label index="answer_group_10.1" type="integer">266675156</label>
+			<label index="answer_group_10.2" type="integer">76619828</label>
+			<label index="answer_group_10.3" type="integer">245085490</label>
+			<label index="answer_group_10.4" type="integer">2598177</label>
+			<label index="answer_group_10.5" type="integer">259701243</label>
+			<label index="answer_group_11" type="integer">226550316</label>
+			<label index="answer_group_11.1" type="integer">94652274</label>
+			<label index="answer_group_11.2" type="integer">216103858</label>
+			<label index="answer_group_11.3" type="integer">245085490</label>
+			<label index="answer_group_11.4" type="integer">157179766</label>
+			<label index="answer_group_11.5" type="integer">165862736</label>
+			<label index="answer_group_12" type="integer">63975436</label>
+			<label index="answer_group_12.1" type="integer">183081170</label>
+			<label index="answer_group_12.2" type="integer">86401905</label>
+			<label index="answer_group_12.3" type="integer">245085490</label>
+			<label index="answer_group_12.4" type="integer">170229799</label>
+			<label index="answer_group_12.5" type="integer">241289868</label>
+			<label index="answer_group_13" type="integer">98156534</label>
+			<label index="answer_group_13.1" type="integer">42366596</label>
+			<label index="answer_group_13.2" type="integer">168404681</label>
+			<label index="answer_group_13.3" type="integer">245085490</label>
+			<label index="answer_group_13.4" type="integer">43406907</label>
+			<label index="answer_group_13.5" type="integer">96500183</label>
+			<label index="answer_group_14" type="integer">114024124</label>
+			<label index="answer_group_14.1" type="integer">39191896</label>
+			<label index="answer_group_14.2" type="integer">136409398</label>
+			<label index="answer_group_14.3" type="integer">245085490</label>
+			<label index="answer_group_14.4" type="integer">82272662</label>
+			<label index="answer_group_14.5" type="integer">84046528</label>
+			<label index="answer_group_15" type="integer">8687369</label>
+			<label index="answer_group_15.1" type="integer">163567998</label>
+			<label index="answer_group_15.2" type="integer">4185073</label>
+			<label index="answer_group_15.3" type="integer">245085490</label>
+			<label index="answer_group_15.4" type="integer">188419390</label>
+			<label index="answer_group_15.5" type="integer">29395571</label>
+			<label index="answer_group_16" type="integer">189068314</label>
+			<label index="answer_group_16.1" type="integer">67731718</label>
+			<label index="answer_group_16.2" type="integer">40239204</label>
+			<label index="answer_group_16.3" type="integer">245085490</label>
+			<label index="answer_group_16.4" type="integer">61250356</label>
+			<label index="answer_group_16.5" type="integer">129720518</label>
+			<label index="answer_group_17" type="integer">108513885</label>
+			<label index="answer_group_17.1" type="integer">41015664</label>
+			<label index="answer_group_17.2" type="integer">186160977</label>
+			<label index="answer_group_17.3" type="integer">252386005</label>
+			<label index="conditions_title" type="integer">115675021</label>
+			<label index="conditions_group" type="integer">59336379</label>
+			<label index="conditions_not" type="integer">175423581</label>
+			<label index="conditions_field" type="integer">116484703</label>
+			<label index="conditions_condition" type="integer">165843995</label>
+			<label index="conditions_ruleRemove" type="integer">157560919</label>
+			<label index="conditions_and" type="integer">204681558</label>
+			<label index="conditions_or" type="integer">61003262</label>
+			<label index="conditions_rules" type="integer">32823958</label>
+			<label index="conditions_newField" type="integer">234556502</label>
+			<label index="conditions_email" type="integer">32015587</label>
+			<label index="conditions_passthru" type="integer">205419241</label>
+			<label index="conditions_new" type="integer">177770090</label>
+			<label index="conditions_default" type="integer">128029197</label>
+			<label index="conditions_catchall" type="integer">201734980</label>
+			<label index="conditions_test" type="integer">233188063</label>
+			<label index="conditions_page" type="integer">26464201</label>
+			<label index="conditions_equal" type="integer">79865781</label>
+			<label index="conditions_notEqual" type="integer">242461725</label>
+			<label index="conditions_contains" type="integer">187106162</label>
+			<label index="conditions_notContains" type="integer">251083208</label>
+			<label index="conditions_greater" type="integer">24224556</label>
+			<label index="conditions_greaterEqual" type="integer">32506384</label>
+			<label index="conditions_less" type="integer">193236320</label>
+			<label index="conditions_lessEqual" type="integer">3389602</label>
+			<label index="conditions_set" type="integer">201530214</label>
+			<label index="conditions_notSet" type="integer">253867592</label>
+			<label index="conditions_none" type="integer">166300802</label>
+			<label index="conditions_true" type="integer">260209908</label>
+			<label index="conditions_false" type="integer">260251826</label>
+			<label index="conditions_yes" type="integer">154974727</label>
+			<label index="conditions_no" type="integer">196073266</label>
+			<label index="conditions_error" type="integer">235795059</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="de" type="array">
+		</languageKey>
+	</orig_text>
+</T3locallangExt>
