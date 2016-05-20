@@ -27,7 +27,7 @@
  * @author    Patrick Broens <patrick@patrickbroens.nl>
  */
 
-$LANG->includeLLFile('EXT:pbsurvey/lang/locallang.xml');
+$GLOBALS['LANG']->includeLLFile('EXT:pbsurvey/lang/locallang.xml');
 
 class tx_pbsurvey_pi1_wizicon {
 	function proc($wizardItems)	{
@@ -41,12 +41,6 @@ class tx_pbsurvey_pi1_wizicon {
 
 		return $wizardItems;
 	}
-}
-
-
-
-if (defined("TYPO3_MODE") && $TYPO3_CONF_VARS[TYPO3_MODE]["XCLASS"]["ext/pbsurvey/pi1/class.tx_pbsurvey_pi1_wizicon.php"])	{
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]["XCLASS"]["ext/pbsurvey/pi1/class.tx_pbsurvey_pi1_wizicon.php"]);
 }
 
 ?>
