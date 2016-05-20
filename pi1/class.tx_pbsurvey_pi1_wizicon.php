@@ -27,7 +27,7 @@
  * @author    Patrick Broens <patrick@patrickbroens.nl>
  */
 
-$GLOBALS['LANG']->includeLLFile('EXT:pbsurvey/lang/locallang.xml');
+$LANG->includeLLFile('EXT:pbsurvey/lang/locallang.xml');
 
 class tx_pbsurvey_pi1_wizicon {
 	function proc($wizardItems)	{

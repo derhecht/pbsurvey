@@ -14,21 +14,20 @@ $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Questionaire',
 	'description' => 'Questionaire is an extension to take surveys from the visitors of your website. The results can be exported to a csv-file to analyze in Microsoft Excel or the statistical program SPSS or it\'s open source concurrent PSPP.',
 	'category' => 'plugin',
-	'version' => '1.6.0',
+	'version' => '1.7.0',
 	'state' => 'stable',
 	'uploadfolder' => true,
 	'createDirs' => '',
 	'clearcacheonload' => false,
-	'author' => 'Patrick Broens',
-	'author_email' => 'patrick@patrickbroens.nl',
-	'author_company' => '',
+	'author' => 'Patrick Broens, Jakob Berlin',
+	'author_email' => 'patrick@patrickbroens.nl, j.berlin@ewerk.com',
+	'author_company' => 'EWERK IT GmbH',
 	'constraints' => 
 	array (
 		'depends' => 
 		array (
 			'cms' => '',
-			'php' => '5.2.0-5.5.99',
-			'typo3' => '6.0.0-6.2.99',
+			'typo3' => '7.6.0-7.6.99',
 		),
 		'conflicts' => 
 		array (

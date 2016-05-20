@@ -23,7 +23,7 @@
 ***************************************************************/
 
 $GLOBALS['LANG']->includeLLFile('EXT:pbsurvey/lang/locallang_modfunc1.xml');
-$GLOBALS['BE_USER']->modAccess($MCONF,1);
+$GLOBALS['BE_USER']->modAccess($GLOBALS['MCONF'],1);
 
 use \TYPO3\CMS\Backend\Utility\BackendUtility;
 

@@ -117,7 +117,7 @@ class tx_pbsurvey_module1 extends \TYPO3\CMS\Backend\Module\BaseScriptClass {
 			}
 			$this->content.=$this->objDoc->spacer(10);
 		} else {
-			$this->objDoc = GeneralUtility::makeInstance("TYPO3\\CMS\\Backend\\Template\\MediumDocumentTemplate");
+			$this->objDoc = GeneralUtility::makeInstance('TYPO3\CMS\Backend\Template\DocumentTemplate'); ////@FIXED by M. Fraust for TYPO3 7.6, replaced mediumDoc by TYPO3\CMS\Backend\Template\DocumentTemplate
 			$this->objDoc->backPath = $BACK_PATH;
 			$this->content.=$this->objDoc->startPage($LANG->getLL("title"));
 			$this->content.=$this->objDoc->header($LANG->getLL("title"));
@@ -250,9 +250,13 @@ if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/pbsurve
 
 $SOBE = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('tx_pbsurvey_module1');
 $SOBE->init();
-foreach($SOBE->include_once as $INC_FILE)	include_once($INC_FILE);
+if (!empty($SOBE->include_once)) {
+    foreach($SOBE->include_once as $INC_FILE)	include_once($INC_FILE);
+}
 $SOBE->checkExtObj();
-foreach($SOBE->include_once as $INC_FILE)	include_once($INC_FILE);
+if (!empty($SOBE->include_once)) {
+    foreach($SOBE->include_once as $INC_FILE)	include_once($INC_FILE);
+}
 $SOBE->checkSubExtObj();
 $SOBE->main();
 $SOBE->printContent();
