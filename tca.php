@@ -117,14 +117,13 @@ $TCA['tx_pbsurvey_item'] = array(
             )
         ),
         'question_type' => array(
-            'displayCond' => 'FIELD:sys_language_uid:=:0',
+            'displayCond' => 'FIELD:sys_language_uid:<=:0',
             'exclude' => 0,
             'label' => 'LLL:EXT:pbsurvey/lang/locallang_db.xml:tx_pbsurvey_item.question_type',
             'config' => array(
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => array(
-                    //array('LLL:EXT:pbsurvey/lang/locallang_db.xml:tx_pbsurvey_item.question_type.I.0', '0'),
                     array('LLL:EXT:pbsurvey/lang/locallang_db.xml:tx_pbsurvey_item.question_type.I.1', '1'),
                     array('LLL:EXT:pbsurvey/lang/locallang_db.xml:tx_pbsurvey_item.question_type.I.23', '23'),
                     array('LLL:EXT:pbsurvey/lang/locallang_db.xml:tx_pbsurvey_item.question_type.I.2', '2'),
